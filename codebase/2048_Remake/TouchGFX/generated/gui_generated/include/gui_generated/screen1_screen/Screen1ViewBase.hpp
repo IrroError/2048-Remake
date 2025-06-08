@@ -25,6 +25,13 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
+    touchgfx::Box box1;
+    touchgfx::Box box2;
+    touchgfx::Box box3;
+    touchgfx::Box box4;
+    touchgfx::Box box5;
+    touchgfx::Box box6;
+    touchgfx::Box box7;
 
 private:
 
