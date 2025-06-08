@@ -1,0 +1,19 @@
+# STM32CubeIDE output files
+/codebase/Debug/
+/codebase/Release/
+/codebase/build/
+
+# TouchGFX generated files that should not be in version control
+/codebase/TouchGFX/build/
+/codebase/TouchGFX/generated/
+/codebase/TouchGFX/.cache/
+
+# User-specific files
+*.launch
+*.user
+*.suo
+.mxproject
+
+# Misc
+.DS_Store
+Thumbs.db
