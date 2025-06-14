@@ -8,6 +8,7 @@
 #include <mvp/View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -25,13 +26,14 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Box box1;
-    touchgfx::Box box2;
-    touchgfx::Box box3;
-    touchgfx::Box box4;
-    touchgfx::Box box5;
-    touchgfx::Box box6;
-    touchgfx::Box box7;
+    touchgfx::Box backgroundBox;
+    touchgfx::Box headerBox;
+    touchgfx::Box gameBoardBackground;
+    touchgfx::Box gameBoardContainer;
+    touchgfx::TextArea T_2048_TITLE;
+    touchgfx::TextArea T_SCORE_LABEL;
+    touchgfx::TextArea T_SCORE_VALUE;
+    touchgfx::TextArea T_STATUS;
 
 private:
 

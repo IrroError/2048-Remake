@@ -1,0 +1,68 @@
+{
+  "languages": [
+    {
+      "name": "GB",
+      "font_configuration": {
+        "font_groups": [
+          {
+            "name": "Title",
+            "font_size": 24,
+            "font_file": "Default.ttf"
+          },
+          {
+            "name": "Large",
+            "font_size": 18,
+            "font_file": "Default.ttf"
+          },
+          {
+            "name": "Medium",
+            "font_size": 14,
+            "font_file": "Default.ttf"
+          },
+          {
+            "name": "Small",
+            "font_size": 10,
+            "font_file": "Default.ttf"
+          }
+        ]
+      },
+      "text_entries": [
+        {
+          "text_id": "T_2048_TITLE",
+          "text": "2048",
+          "font_group": "Title"
+        },
+        {
+          "text_id": "T_SCORE_LABEL",
+          "text": "SCORE",
+          "font_group": "Small"
+        },
+        {
+          "text_id": "T_SCORE_VALUE",
+          "text": "0",
+          "font_group": "Large"
+        },
+        {
+          "text_id": "T_STATUS",
+          "text": "Tilt to move tiles",
+          "font_group": "Small"
+        },
+        {
+          "text_id": "T_GAME_WON",
+          "text": "You Won!",
+          "font_group": "Medium"
+        },
+        {
+          "text_id": "T_GAME_OVER",
+          "text": "Game Over!",
+          "font_group": "Medium"
+        },
+        {
+          "text_id": "T_NEW_GAME",
+          "text": "Press button for new game",
+          "font_group": "Small"
+        }
+      ]
+    }
+  ]
+}

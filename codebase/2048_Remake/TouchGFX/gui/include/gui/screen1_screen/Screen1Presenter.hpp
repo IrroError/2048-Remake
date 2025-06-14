@@ -3,6 +3,7 @@
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
+#include "GameBoard.hpp"
 
 using namespace touchgfx;
 
@@ -26,6 +27,13 @@ public:
     virtual void deactivate();
 
     virtual ~Screen1Presenter() {}
+    
+    // Game interface methods
+    void updateGameDisplay(const GameBoard& gameBoard);
+    void updateScore(uint32_t score);
+    void showGameOver();
+    void showGameWon();
+    void hideGameOverWon();
 
 private:
     Screen1Presenter();

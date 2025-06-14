@@ -22,6 +22,7 @@
 #include "stm32f4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -219,5 +220,28 @@ void DMA2D_IRQHandler(void)
 }
 
 /* USER CODE BEGIN 1 */
+
+/**
+  * @brief This function handles EXTI Line0 interrupt (User Button).
+  */
+void EXTI0_IRQHandler(void)
+{
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
+}
+
+/**
+  * @brief GPIO EXTI callback for user button press
+  * @param GPIO_Pin: Pin number that triggered the interrupt
+  */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if(GPIO_Pin == GPIO_PIN_0)
+  {
+    // Handle user button press (PA0)
+    // Call C interface function (declared in GameApp.hpp)
+    extern void gameApp_handleButtonPress(void);
+    gameApp_handleButtonPress();
+  }
+}
 
 /* USER CODE END 1 */

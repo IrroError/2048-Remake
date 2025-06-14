@@ -5,10 +5,26 @@
   </Languages>
   <Texts>
     <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_5M9B" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Tilt to move tiles</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZSK1" Alignment="Right" TypographyId="L">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_LOAZ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Score</Translation>
+      </Text>
+      <Text Id="__SingleUse_3XLJ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">2048</Translation>
+      </Text>
+    </TextGroup>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="XL" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="S" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="M" Font="verdana.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="L" Font="verdana.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

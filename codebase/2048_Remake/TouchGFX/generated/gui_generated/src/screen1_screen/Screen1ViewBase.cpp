@@ -3,6 +3,7 @@
 /*********************************************************************************/
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 Screen1ViewBase::Screen1ViewBase()
 {
@@ -10,33 +11,45 @@ Screen1ViewBase::Screen1ViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    box1.setPosition(0, 270, 50, 50);
-    box1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    add(box1);
+    backgroundBox.setPosition(0, 0, 240, 320);
+    backgroundBox.setColor(touchgfx::Color::getColorFromRGB(250, 248, 239));
+    add(backgroundBox);
 
-    box2.setPosition(0, 220, 50, 50);
-    box2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    add(box2);
+    headerBox.setPosition(10, 10, 220, 60);
+    headerBox.setColor(touchgfx::Color::getColorFromRGB(187, 173, 160));
+    add(headerBox);
 
-    box3.setPosition(0, 170, 50, 50);
-    box3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    add(box3);
+    gameBoardBackground.setPosition(20, 77, 200, 200);
+    gameBoardBackground.setColor(touchgfx::Color::getColorFromRGB(187, 173, 160));
+    add(gameBoardBackground);
 
-    box4.setPosition(0, 120, 50, 50);
-    box4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    add(box4);
+    gameBoardContainer.setPosition(25, 82, 190, 190);
+    gameBoardContainer.setColor(touchgfx::Color::getColorFromRGB(205, 193, 180));
+    add(gameBoardContainer);
 
-    box5.setPosition(50, 270, 50, 50);
-    box5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    add(box5);
+    T_2048_TITLE.setXY(25, 15);
+    T_2048_TITLE.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    T_2048_TITLE.setLinespacing(0);
+    T_2048_TITLE.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3XLJ));
+    add(T_2048_TITLE);
 
-    box6.setPosition(100, 270, 50, 50);
-    box6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    add(box6);
+    T_SCORE_LABEL.setXY(25, 40);
+    T_SCORE_LABEL.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    T_SCORE_LABEL.setLinespacing(0);
+    T_SCORE_LABEL.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LOAZ));
+    add(T_SCORE_LABEL);
 
-    box7.setPosition(150, 270, 50, 50);
-    box7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    add(box7);
+    T_SCORE_VALUE.setXY(184, 30);
+    T_SCORE_VALUE.setColor(touchgfx::Color::getColorFromRGB(38, 121, 255));
+    T_SCORE_VALUE.setLinespacing(0);
+    T_SCORE_VALUE.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZSK1));
+    add(T_SCORE_VALUE);
+
+    T_STATUS.setXY(37, 289);
+    T_STATUS.setColor(touchgfx::Color::getColorFromRGB(61, 61, 61));
+    T_STATUS.setLinespacing(0);
+    T_STATUS.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5M9B));
+    add(T_STATUS);
 }
 
 Screen1ViewBase::~Screen1ViewBase()

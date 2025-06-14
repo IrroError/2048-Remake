@@ -21,6 +21,7 @@
 #include "cmsis_os.h"
 #include "app_touchgfx.h"
 #include "usb_host.h"
+#include "GameApp.hpp"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -127,7 +128,9 @@ int main(void)
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
-
+  /* Enable EXTI0 interrupt for user button */
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -658,11 +661,11 @@ void StartDefaultTask(void const * argument)
   /* init code for USB_HOST */
   MX_USB_HOST_Init();
   /* USER CODE BEGIN 5 */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
+  /* Initialize the 2048 Game */
+  gameApp_initialize();
+  
+  /* Run the game (this contains the main game loop) */
+  gameApp_run();
   /* USER CODE END 5 */
 }
 

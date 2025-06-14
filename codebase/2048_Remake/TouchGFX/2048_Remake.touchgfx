@@ -6,90 +6,117 @@
         "Components": [
           {
             "Type": "Box",
-            "Name": "box1",
-            "Y": 270,
-            "Width": 50,
-            "Height": 50,
+            "Name": "backgroundBox",
+            "Width": 240,
+            "Height": 320,
             "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 250,
+              "Green": 248,
+              "Blue": 239
             }
           },
           {
             "Type": "Box",
-            "Name": "box2",
-            "Y": 220,
-            "Width": 50,
-            "Height": 50,
+            "Name": "headerBox",
+            "X": 10,
+            "Y": 10,
+            "Width": 220,
+            "Height": 60,
             "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 187,
+              "Green": 173,
+              "Blue": 160
             }
           },
           {
             "Type": "Box",
-            "Name": "box3",
-            "Y": 170,
-            "Width": 50,
-            "Height": 50,
+            "Name": "gameBoardBackground",
+            "X": 20,
+            "Y": 77,
+            "Width": 200,
+            "Height": 200,
             "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 187,
+              "Green": 173,
+              "Blue": 160
             }
           },
           {
             "Type": "Box",
-            "Name": "box4",
-            "Y": 120,
-            "Width": 50,
-            "Height": 50,
+            "Name": "gameBoardContainer",
+            "X": 25,
+            "Y": 82,
+            "Width": 190,
+            "Height": 190,
             "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 205,
+              "Green": 193,
+              "Blue": 180
             }
           },
           {
-            "Type": "Box",
-            "Name": "box5",
-            "X": 50,
-            "Y": 270,
-            "Width": 50,
-            "Height": 50,
+            "Type": "TextArea",
+            "Name": "T_2048_TITLE",
+            "X": 25,
+            "Y": 15,
+            "Width": 52,
+            "Height": 20,
+            "TextId": "__SingleUse_3XLJ",
+            "TextRotation": "0",
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            }
+            },
+            "AutoSize": true
           },
           {
-            "Type": "Box",
-            "Name": "box6",
-            "X": 100,
-            "Y": 270,
-            "Width": 50,
-            "Height": 50,
+            "Type": "TextArea",
+            "Name": "T_SCORE_LABEL",
+            "X": 25,
+            "Y": 40,
+            "Width": 57,
+            "Height": 20,
+            "TextId": "__SingleUse_LOAZ",
+            "TextRotation": "0",
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            }
+            },
+            "AutoSize": true
           },
           {
-            "Type": "Box",
-            "Name": "box7",
-            "X": 150,
-            "Y": 270,
-            "Width": 50,
-            "Height": 50,
+            "Type": "TextArea",
+            "Name": "T_SCORE_VALUE",
+            "X": 184,
+            "Y": 30,
+            "Width": 19,
+            "Height": 30,
+            "TextId": "__SingleUse_ZSK1",
+            "TextRotation": "0",
             "Color": {
-              "Red": 255,
-              "Green": 255,
+              "Red": 38,
+              "Green": 121,
               "Blue": 255
-            }
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "T_STATUS",
+            "X": 37,
+            "Y": 289,
+            "Width": 166,
+            "Height": 20,
+            "TextId": "__SingleUse_5M9B",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 61,
+              "Green": 61,
+              "Blue": 61
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
