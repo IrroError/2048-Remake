@@ -56,4 +56,4 @@ C:/TouchGFXProjects/2048_Game/TouchGFX/generated/gui_generated/src/containers/Ma
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TextButtonStyle.hpp:67:10:void touchgfx::TextButtonStyle<T>::setText(touchgfx::TypedText) [with T = touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger>]	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp:48:5:touchgfx::ImageButtonStyle<T>::ImageButtonStyle() [with T = touchgfx::ClickButtonTrigger]	32	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TextButtonStyle.hpp:46:5:touchgfx::TextButtonStyle<T>::TextButtonStyle() [with T = touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger>]	16	static
-C:/TouchGFXProjects/2048_Game/TouchGFX/generated/gui_generated/src/containers/MainFrameBase.cpp:9:1:MainFrameBase::MainFrameBase()	80	static
+C:/TouchGFXProjects/2048_Game/TouchGFX/generated/gui_generated/src/containers/MainFrameBase.cpp:9:1:MainFrameBase::MainFrameBase()	88	static

@@ -13,5 +13,4 @@ public:
     virtual void tearDownScreen();
 protected:
 };
-
 #endif // SCREEN1VIEW_HPP

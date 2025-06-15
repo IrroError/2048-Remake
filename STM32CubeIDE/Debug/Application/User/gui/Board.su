@@ -12,5 +12,11 @@
 ../../TouchGFX/gui/include/gui/containers/Board.hpp:10:13:Board::~Board()	8	static
 ../../TouchGFX/gui/include/gui/containers/Board.hpp:10:13:virtual Board::~Board()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:3:1:Board::Board()	8	static
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:8:6:virtual void Board::initialize()	0	static
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:8:1:Board::Board()	8	static
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:35:5:int Board::getValue(int, int) const	0	static
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:56:22:touchgfx::Container* Board::getContainer(int, int)	0	static
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:80:36:touchgfx::TextAreaWithOneWildcard* Board::getTextArea(int, int)	0	static
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:19:6:void Board::updateDisplay(int, int, int)	24	static
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:102:1:cpp)	0	static
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:102:1:cpp)	0	static
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:14:6:virtual void Board::initialize()	0	static

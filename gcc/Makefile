@@ -185,7 +185,8 @@ include_paths := $(library_includes) \
     $(framework_includes) \
     $(touchgfx_middlewares_path) \
     $(cubemx_middlewares_path) \
-    $(touchgfx_generator_components)
+    $(touchgfx_generator_components) \
+    $(application_path)/STM32CubeIDE/Application/User/header
 
 source_paths = $(foreach comp, $(all_components), $(comp)/src) \
     $(foreach comp, $(cubemx_components), $(comp)/Src) \
