@@ -61,6 +61,27 @@
           "text_id": "T_NEW_GAME",
           "text": "Press button for new game",
           "font_group": "Small"
+        },
+        {
+          "text_id": "T_TILENUMBER",
+          "text": "<placeholder>",
+          "alignment": "CENTER",
+          "direction": "LTR",
+          "font_group": "Medium"
+        },
+        {
+          "text_id": "T_TILENUMBER_MEDIUM",
+          "text": "<placeholder>",
+          "alignment": "CENTER",
+          "direction": "LTR",
+          "font_group": "Small"
+        },
+        {
+          "text_id": "T_TILENUMBER_SMALL",
+          "text": "<placeholder>",
+          "alignment": "CENTER",
+          "direction": "LTR",
+          "font_group": "Small"
         }
       ]
     }

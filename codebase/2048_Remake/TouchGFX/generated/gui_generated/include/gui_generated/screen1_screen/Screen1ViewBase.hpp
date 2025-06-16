@@ -30,10 +30,10 @@ protected:
     touchgfx::Box headerBox;
     touchgfx::Box gameBoardBackground;
     touchgfx::Box gameBoardContainer;
-    touchgfx::TextArea T_2048_TITLE;
-    touchgfx::TextArea T_SCORE_LABEL;
-    touchgfx::TextArea T_SCORE_VALUE;
-    touchgfx::TextArea T_STATUS;
+    touchgfx::TextArea titleText;
+    touchgfx::TextArea scoreText;
+    touchgfx::TextArea scoreValue;
+    touchgfx::TextArea statusText;
 
 private:
 

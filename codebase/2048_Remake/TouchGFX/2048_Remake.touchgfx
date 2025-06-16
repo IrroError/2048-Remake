@@ -56,67 +56,63 @@
           },
           {
             "Type": "TextArea",
-            "Name": "T_2048_TITLE",
-            "X": 25,
+            "Name": "titleText",
+            "X": 20,
+            "Y": 20,
+            "Width": 100,
+            "Height": 40,
+            "TextId": "2048_TITLE",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "scoreText",
+            "X": 130,
             "Y": 15,
-            "Width": 52,
-            "Height": 20,
-            "TextId": "__SingleUse_3XLJ",
+            "Width": 90,
+            "Height": 15,
+            "TextId": "SCORE_LABEL",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            },
-            "AutoSize": true
+            }
           },
           {
             "Type": "TextArea",
-            "Name": "T_SCORE_LABEL",
-            "X": 25,
-            "Y": 40,
-            "Width": 57,
-            "Height": 20,
-            "TextId": "__SingleUse_LOAZ",
+            "Name": "scoreValue",
+            "X": 130,
+            "Y": 35,
+            "Width": 90,
+            "Height": 25,
+            "TextId": "SCORE_VALUE",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            },
-            "AutoSize": true
+            }
           },
           {
             "Type": "TextArea",
-            "Name": "T_SCORE_VALUE",
-            "X": 184,
-            "Y": 30,
-            "Width": 19,
-            "Height": 30,
-            "TextId": "__SingleUse_ZSK1",
+            "Name": "statusText",
+            "X": 20,
+            "Y": 300,
+            "Width": 200,
+            "Height": 15,
+            "TextId": "STATUS",
             "TextRotation": "0",
             "Color": {
-              "Red": 38,
-              "Green": 121,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "T_STATUS",
-            "X": 37,
-            "Y": 289,
-            "Width": 166,
-            "Height": 20,
-            "TextId": "__SingleUse_5M9B",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 61,
-              "Green": 61,
-              "Blue": 61
-            },
-            "AutoSize": true
+              "Red": 119,
+              "Green": 110,
+              "Blue": 101
+            }
           }
         ],
         "Interactions": [

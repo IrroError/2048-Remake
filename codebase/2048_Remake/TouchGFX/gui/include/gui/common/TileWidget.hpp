@@ -4,8 +4,11 @@
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/Color.hpp>
 #include <touchgfx/Unicode.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
+#include <touchgfx/TypedText.hpp>
 
 using namespace touchgfx;
 
@@ -28,11 +31,10 @@ public:
     // Setup the tile appearance
     void setupTile(int16_t x, int16_t y, int16_t width, int16_t height);
 
-protected:
-    static const int16_t TILE_SIZE = 60;
-    static const int16_t TILE_MARGIN = 8;
-      Box tileBackground;
-    TextArea tileText;
+protected:    static const int16_t TILE_SIZE = 40;     // Synchronized with GameBoardWidget
+    static const int16_t TILE_MARGIN = 5;    // Synchronized with GameBoardWidget
+    Box tileBackground;
+    TextAreaWithOneWildcard tileText;
     Unicode::UnicodeChar tileTextBuffer[5]; // For numbers up to 9999
     
     uint16_t currentValue;

@@ -10,11 +10,18 @@ TileWidget::TileWidget() : currentValue(0)
     tileBackground.setPosition(0, 0, TILE_SIZE, TILE_SIZE);
     tileBackground.setColor(Color::getColorFromRGB(205, 193, 180)); // Default empty tile color
     add(tileBackground);
-      // Setup text
-    tileText.setPosition(0, 0, TILE_SIZE, TILE_SIZE);
-    tileText.setColor(Color::getColorFromRGB(119, 110, 101)); // Dark text
-    // Note: You'll need to set up text rendering differently without wildcards
-    tileText.setVisible(false); // Hidden for empty tiles
+    
+    // Initialize the text buffer with empty text
+    Unicode::snprintf(tileTextBuffer, 5, "");
+    
+    // Setup text area with default parameters
+    tileText.setXY(0, 0);
+    tileText.setWidth(TILE_SIZE);
+    tileText.setHeight(TILE_SIZE);
+    tileText.setTypedText(TypedText(T_TILENUMBER));
+    tileText.setWildcard(tileTextBuffer);
+    tileText.setColor(Color::getColorFromRGB(119, 110, 101)); // Dark text for light tiles
+    tileText.setVisible(false); // Hide initially (empty tile)
     add(tileText);
     
     updateAppearance();
@@ -36,8 +43,19 @@ uint16_t TileWidget::getValue() const
 void TileWidget::setupTile(int16_t x, int16_t y, int16_t width, int16_t height)
 {
     setPosition(x, y, width, height);
+    
+    // Set up the tile background to fill the entire area
     tileBackground.setPosition(0, 0, width, height);
+    
+    // Set the text area to use the full tile size for alignment
     tileText.setPosition(0, 0, width, height);
+    
+    // Ensure the text has a valid type
+    tileText.setTypedText(TypedText(T_TILENUMBER));
+    
+    // Set initial empty text
+    Unicode::snprintf(tileTextBuffer, 5, "");
+    tileText.setWildcard(tileTextBuffer);
 }
 
 void TileWidget::updateAppearance()
@@ -46,11 +64,19 @@ void TileWidget::updateAppearance()
         // Empty tile
         tileBackground.setColor(Color::getColorFromRGB(205, 193, 180));
         tileText.setVisible(false);
-    } else {        // Tile with value
+    } else {
+        // Tile with value
         tileBackground.setColor(getTileColor(currentValue));
         tileText.setColor(getTextColor(currentValue));
         
-        // For now, just show/hide text - proper text rendering needs TypedText setup
+        // Convert number to text
+        Unicode::snprintf(tileTextBuffer, 5, "%d", currentValue);
+        
+        // Use a consistent font size with center alignment
+        tileText.setTypedText(TypedText(T_TILENUMBER));
+        tileText.setWildcard(tileTextBuffer);
+        
+        // Make sure the text is visible
         tileText.setVisible(true);
     }
     

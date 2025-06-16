@@ -1,7 +1,6 @@
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <touchgfx/Color.hpp>
 #include <touchgfx/Unicode.hpp>
-#include <GameBoard.hpp>
 
 Screen1View::Screen1View()
 {
@@ -22,10 +21,11 @@ void Screen1View::tearDownScreen()
 
 void Screen1View::setupGameBoard()
 {
-    // Position the game board widget over the gameBoardContainer area
-    // The gameBoardContainer is a Box at (25, 82) with size (190, 190)
-    // We'll position our game board widget at the same location
-    gameBoardWidget.setPosition(25, 82, 190, 190);
+    // Position the board inside the gameBoardContainer
+    // gameBoardContainer is at position (25, 82) with size 190x190
+    
+    // Set up the game board widget to fit precisely within the container
+    gameBoardWidget.setupBoard(25, 82);
     add(gameBoardWidget);
 }
 
@@ -34,8 +34,8 @@ void Screen1View::initializeTextValues()
     // Initialize score display
     Unicode::snprintf(scoreBuffer, 10, "0");
     
-    // Update the score value text
-    T_SCORE_VALUE.invalidate();
+    // Update the score value text widget (not the enum)
+    scoreValue.invalidate();
     
     // Add some test tiles to see the visual result
     // This is temporary - remove this once full game integration is complete
@@ -70,9 +70,8 @@ void Screen1View::updateGameBoard(const GameBoard& gameBoard)
 void Screen1View::updateScore(uint32_t score)
 {
     Unicode::snprintf(scoreBuffer, 10, "%lu", score);
-    // Note: For dynamic text updates, you may need to use setWildcard if the text resource supports it
-    // For now, just invalidate to trigger a redraw
-    T_SCORE_VALUE.invalidate();
+    // Use the actual scoreValue widget, not the text enum
+    scoreValue.invalidate();
 }
 
 void Screen1View::showGameOver()
@@ -92,8 +91,8 @@ void Screen1View::hideGameOverWon()
 
 void Screen1View::setStatusMessage(const char* message)
 {
-    // The T_STATUS TextArea is now generated and available
+    // Use the actual statusText widget, not the text enum
     // Note: For dynamic text updates, you might need to create text resources with wildcards
     // For now, just invalidate to trigger a redraw with the existing text
-    T_STATUS.invalidate();
+    statusText.invalidate();
 }

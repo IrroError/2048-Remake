@@ -3,6 +3,8 @@
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
+
+// Include the core GameBoard header
 #include "GameBoard.hpp"
 
 using namespace touchgfx;
@@ -28,12 +30,15 @@ public:
 
     virtual ~Screen1Presenter() {}
     
-    // Game interface methods
+    // Game interface methods (available for both STM32 and simulator)
     void updateGameDisplay(const GameBoard& gameBoard);
     void updateScore(uint32_t score);
     void showGameOver();
     void showGameWon();
     void hideGameOverWon();
+
+    // Simulator-specific methods
+    void simulatorTick();
 
 private:
     Screen1Presenter();

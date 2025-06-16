@@ -27,29 +27,29 @@ Screen1ViewBase::Screen1ViewBase()
     gameBoardContainer.setColor(touchgfx::Color::getColorFromRGB(205, 193, 180));
     add(gameBoardContainer);
 
-    T_2048_TITLE.setXY(25, 15);
-    T_2048_TITLE.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    T_2048_TITLE.setLinespacing(0);
-    T_2048_TITLE.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3XLJ));
-    add(T_2048_TITLE);
+    titleText.setPosition(20, 20, 100, 40);
+    titleText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    titleText.setLinespacing(0);
+    titleText.setTypedText(touchgfx::TypedText(T_2048_TITLE));
+    add(titleText);
 
-    T_SCORE_LABEL.setXY(25, 40);
-    T_SCORE_LABEL.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    T_SCORE_LABEL.setLinespacing(0);
-    T_SCORE_LABEL.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LOAZ));
-    add(T_SCORE_LABEL);
+    scoreText.setPosition(130, 15, 90, 15);
+    scoreText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    scoreText.setLinespacing(0);
+    scoreText.setTypedText(touchgfx::TypedText(T_SCORE_LABEL));
+    add(scoreText);
 
-    T_SCORE_VALUE.setXY(184, 30);
-    T_SCORE_VALUE.setColor(touchgfx::Color::getColorFromRGB(38, 121, 255));
-    T_SCORE_VALUE.setLinespacing(0);
-    T_SCORE_VALUE.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZSK1));
-    add(T_SCORE_VALUE);
+    scoreValue.setPosition(130, 35, 90, 25);
+    scoreValue.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    scoreValue.setLinespacing(0);
+    scoreValue.setTypedText(touchgfx::TypedText(T_SCORE_VALUE));
+    add(scoreValue);
 
-    T_STATUS.setXY(37, 289);
-    T_STATUS.setColor(touchgfx::Color::getColorFromRGB(61, 61, 61));
-    T_STATUS.setLinespacing(0);
-    T_STATUS.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5M9B));
-    add(T_STATUS);
+    statusText.setPosition(20, 300, 200, 15);
+    statusText.setColor(touchgfx::Color::getColorFromRGB(119, 110, 101));
+    statusText.setLinespacing(0);
+    statusText.setTypedText(touchgfx::TypedText(T_STATUS));
+    add(statusText);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
