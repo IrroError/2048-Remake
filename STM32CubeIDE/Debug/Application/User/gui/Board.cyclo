@@ -13,10 +13,18 @@
 ../../TouchGFX/gui/include/gui/containers/Board.hpp:10:13:virtual Board::~Board()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
 C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:8:1:Board::Board()	1
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:35:5:int Board::getValue(int, int) const	1
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:56:22:touchgfx::Container* Board::getContainer(int, int)	17
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:80:36:touchgfx::TextAreaWithOneWildcard* Board::getTextArea(int, int)	17
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:19:6:void Board::updateDisplay(int, int, int)	2
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:102:1:cpp)	1
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:102:1:cpp)	1
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:14:6:virtual void Board::initialize()	1
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:32:5:int Board::getValue(int, int) const	1
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:53:6:bool Board::moveLeft()	9
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:81:6:bool Board::moveRight()	9
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:109:6:bool Board::moveUp()	9
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:137:6:bool Board::moveDown()	9
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:165:6:bool Board::canMove()	7
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:179:5:int Board::getScore()	2
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:189:22:touchgfx::Container* Board::getContainer(int, int)	17
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:229:36:touchgfx::TextAreaWithOneWildcard* Board::getTextArea(int, int)	17
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:17:6:void Board::updateDisplay(int, int, int)	2
+C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {std::pair<int, int>}; _Tp = std::pair<int, int>; _Alloc = std::allocator<std::pair<int, int> >]	6
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:36:6:void Board::addRandomTile()	7
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:267:1:cpp)	1
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:267:1:cpp)	1
+C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:13:6:virtual void Board::initialize()	1

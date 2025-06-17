@@ -10,8 +10,8 @@ public:
     virtual ~Board() {}
     virtual void initialize();
     void updateDisplay(int row, int col, int value);
-    void setRandomTile();
     int getValue(int row, int col) const;
+    int getScore();
 protected:
     touchgfx::Container* getContainer(int row, int col);
     touchgfx::TextAreaWithOneWildcard* getTextArea(int row, int col);
@@ -19,6 +19,11 @@ private:
     static int board[4][4];
     static touchgfx::Unicode::UnicodeChar textBuffers[16][10];
     void addRandomTile();
+    bool moveLeft();
+    bool moveRight();
+    bool moveUp();
+    bool moveDown();
+    bool canMove();
 };
 
 #endif // BOARD_HPP

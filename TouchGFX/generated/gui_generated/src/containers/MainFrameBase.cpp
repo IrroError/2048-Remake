@@ -38,7 +38,7 @@ MainFrameBase::MainFrameBase()
     flexButton1_1_1.setPosition(11, 277, 100, 36);
     add(flexButton1_1_1);
 
-    Score.setXY(99, 5);
+    Score.setPosition(68, 5, 104, 17);
     Score.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Score.setLinespacing(0);
     Score.setTypedText(touchgfx::TypedText(T___SINGLEUSE_L2L5));

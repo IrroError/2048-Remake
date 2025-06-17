@@ -12,7 +12,7 @@ void Screen1View::setupScreen() {
 			board1.updateDisplay(row, col, value);
 		}
 	}
-	mainFrame1.setScore(12 );
+	mainFrame1.setScore(2048);
 }
 
 void Screen1View::tearDownScreen() {

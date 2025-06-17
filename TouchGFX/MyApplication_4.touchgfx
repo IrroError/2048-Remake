@@ -754,14 +754,12 @@
           {
             "Type": "TextArea",
             "Name": "Score",
-            "X": 99,
+            "X": 68,
             "Y": 5,
-            "Width": 42,
-            "Height": 15,
-            "LockPosition": true,
+            "Width": 104,
+            "Height": 17,
             "TextId": "__SingleUse_L2L5",
             "TextRotation": "0",
-            "AutoSize": true,
             "Wildcard1": {}
           }
         ],
