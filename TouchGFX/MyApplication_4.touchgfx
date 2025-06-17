@@ -20,7 +20,19 @@
             "CustomContainerDefinitionName": "Board"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "tickEvent"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [
@@ -763,7 +775,19 @@
             "Wildcard1": {}
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "flexButton1_1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleResetButtonClicked"
+            }
+          }
+        ]
       }
     ],
     "Name": "MyApplication_4",

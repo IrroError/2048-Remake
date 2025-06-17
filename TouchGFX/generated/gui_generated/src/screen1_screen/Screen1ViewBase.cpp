@@ -27,3 +27,11 @@ void Screen1ViewBase::setupScreen()
     mainFrame1.initialize();
     board1.initialize();
 }
+
+void Screen1ViewBase::handleTickEvent()
+{
+    //Interaction1
+    //When every N tick call virtual function
+    //Call tickEvent
+    tickEvent();
+}

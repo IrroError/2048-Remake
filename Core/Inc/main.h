@@ -70,7 +70,13 @@ void Error_Handler(void);
 #define SPI5_NCS_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
-
+typedef enum {
+    DIR_NEUTRAL = 0,
+    DIR_UP,
+    DIR_DOWN,
+    DIR_LEFT,
+    DIR_RIGHT
+} Direction;
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

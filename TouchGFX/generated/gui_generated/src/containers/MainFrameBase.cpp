@@ -6,7 +6,8 @@
 #include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-MainFrameBase::MainFrameBase()
+MainFrameBase::MainFrameBase() :
+    flexButtonCallback(this, &MainFrameBase::flexButtonCallbackHandler)
 {
     setWidth(240);
     setHeight(320);
@@ -27,6 +28,7 @@ MainFrameBase::MainFrameBase()
     flexButton1_1.setText(TypedText(T___SINGLEUSE_HZSS));
     flexButton1_1.setTextPosition(0, 10, 100, 36);
     flexButton1_1.setTextColors(touchgfx::Color::getColorFromRGB(71, 57, 57), touchgfx::Color::getColorFromRGB(0, 0, 0));
+    flexButton1_1.setAction(flexButtonCallback);
     flexButton1_1.setPosition(130, 277, 100, 36);
     add(flexButton1_1);
 
@@ -53,4 +55,15 @@ MainFrameBase::~MainFrameBase()
 void MainFrameBase::initialize()
 {
 
+}
+
+void MainFrameBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
+{
+    if (&src == &flexButton1_1)
+    {
+        //Interaction1
+        //When flexButton1_1 clicked call virtual function
+        //Call handleResetButtonClicked
+        handleResetButtonClicked();
+    }
 }
