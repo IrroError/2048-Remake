@@ -19,12 +19,12 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:127:18:virtual void touchgfx::TextArea::setXBaselineY(int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:403:41:virtual const touchgfx::Unicode::UnicodeChar* touchgfx::TextArea::getWildcard2() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:84:41:virtual const touchgfx::Unicode::UnicodeChar* touchgfx::TextAreaWithOneWildcard::getWildcard1() const	0	static
-C:/TouchGFXProjects/2048_Game/TouchGFX/generated/gui_generated/src/containers/BoardBase.cpp:253:1:BoardBase::~BoardBase()	0	static
-C:/TouchGFXProjects/2048_Game/TouchGFX/generated/gui_generated/src/containers/BoardBase.cpp:258:6:virtual void BoardBase::initialize()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:62:7:touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	0	static
+C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/generated/gui_generated/src/containers/BoardBase.cpp:253:1:BoardBase::~BoardBase()	0	static
+C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/generated/gui_generated/src/containers/BoardBase.cpp:258:6:virtual void BoardBase::initialize()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:62:7:virtual touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	8	static
-C:/TouchGFXProjects/2048_Game/TouchGFX/generated/gui_generated/src/containers/BoardBase.cpp:253:1:virtual BoardBase::~BoardBase()	8	static
+C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/generated/gui_generated/src/containers/BoardBase.cpp:253:1:virtual BoardBase::~BoardBase()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:43:18:virtual void touchgfx::TextAreaWithWildcardBase::invalidateContent() const	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	0	static
@@ -36,4 +36,4 @@ C:/TouchGFXProjects/2048_Game/TouchGFX/generated/gui_generated/src/containers/Bo
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:429:9:touchgfx::TextArea::BoundingArea::BoundingArea()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:49:36:virtual touchgfx::TextArea::BoundingArea touchgfx::TextAreaWithWildcardBase::calculateBoundingArea() const	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:65:5:touchgfx::TextAreaWithOneWildcard::TextAreaWithOneWildcard()	16	static
-C:/TouchGFXProjects/2048_Game/TouchGFX/generated/gui_generated/src/containers/BoardBase.cpp:8:1:BoardBase::BoardBase()	272	static
+C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/generated/gui_generated/src/containers/BoardBase.cpp:8:1:BoardBase::BoardBase()	272	static

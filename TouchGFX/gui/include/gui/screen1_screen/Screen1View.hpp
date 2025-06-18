@@ -11,6 +11,16 @@ public:
     virtual ~Screen1View() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    void handleJoystickUp();
+    void handleJoystickDown();
+    void handleJoystickLeft();
+    void handleJoystickRight();
+    void handleResetGame();
+    void handleTickEvent() override;
+    void tickEvent() override;
+    static Screen1View* instance;
+    Screen1View* getInstance();
 protected:
+private:
 };
 #endif // SCREEN1VIEW_HPP

@@ -70,7 +70,6 @@ void Error_Handler(void);
 #define SPI5_NCS_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
-
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

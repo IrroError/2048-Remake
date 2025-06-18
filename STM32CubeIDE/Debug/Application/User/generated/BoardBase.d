@@ -1,5 +1,5 @@
 Application/User/generated/BoardBase.o: \
- C:/TouchGFXProjects/2048_Game/TouchGFX/generated/gui_generated/src/containers/BoardBase.cpp \
+ C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/generated/gui_generated/src/containers/BoardBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/BoardBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \

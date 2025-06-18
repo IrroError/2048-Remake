@@ -1,4 +1,5 @@
-Application/User/main.o: C:/TouchGFXProjects/2048_Game/Core/Src/main.c \
+Application/User/main.o: \
+ C:/TouchGFXProjects/2048_Game/2048-Remake/Core/Src/main.c \
  ../../Core/Inc/main.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../../Core/Inc/stm32f4xx_hal_conf.h \
@@ -47,7 +48,7 @@ Application/User/main.o: C:/TouchGFXProjects/2048_Game/Core/Src/main.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- ../../TouchGFX/App/app_touchgfx.h \
+ ../../TouchGFX/App/app_touchgfx.h ../../Core/Inc/Direction.h \
  ../../Drivers/BSP/Components/ili9341/ili9341.h \
  ../../Drivers/BSP/Components/ili9341/../Common/lcd.h
 ../../Core/Inc/main.h:
@@ -99,5 +100,6 @@ Application/User/main.o: C:/TouchGFXProjects/2048_Game/Core/Src/main.c \
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 ../../TouchGFX/App/app_touchgfx.h:
+../../Core/Inc/Direction.h:
 ../../Drivers/BSP/Components/ili9341/ili9341.h:
 ../../Drivers/BSP/Components/ili9341/../Common/lcd.h:

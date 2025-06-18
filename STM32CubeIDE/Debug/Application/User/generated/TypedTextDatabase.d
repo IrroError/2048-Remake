@@ -1,5 +1,5 @@
 Application/User/generated/TypedTextDatabase.o: \
- C:/TouchGFXProjects/2048_Game/TouchGFX/generated/texts/src/TypedTextDatabase.cpp \
+ C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/generated/texts/src/TypedTextDatabase.cpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp \

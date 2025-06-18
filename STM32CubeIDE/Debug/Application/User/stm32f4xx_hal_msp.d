@@ -1,5 +1,5 @@
 Application/User/stm32f4xx_hal_msp.o: \
- C:/TouchGFXProjects/2048_Game/Core/Src/stm32f4xx_hal_msp.c \
+ C:/TouchGFXProjects/2048_Game/2048-Remake/Core/Src/stm32f4xx_hal_msp.c \
  ../../Core/Inc/main.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../../Core/Inc/stm32f4xx_hal_conf.h \

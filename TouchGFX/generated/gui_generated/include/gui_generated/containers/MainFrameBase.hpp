@@ -17,6 +17,14 @@ public:
     virtual ~MainFrameBase();
     virtual void initialize();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void handleResetButtonClicked()
+    {
+        // Override and implement this function in MainFrame
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -33,6 +41,16 @@ protected:
     touchgfx::TextAreaWithOneWildcard Score;
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<MainFrameBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
 };
 

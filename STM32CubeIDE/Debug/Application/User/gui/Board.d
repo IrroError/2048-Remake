@@ -1,5 +1,5 @@
 Application/User/gui/Board.o: \
- C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp \
+ C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/gui/src/containers/Board.cpp \
  ../../TouchGFX/gui/include/gui/containers/Board.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/BoardBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
