@@ -103,8 +103,13 @@ void Screen1View::handleJoystickRight() {
 }
 
 void Screen1View::handleResetGame() {
-	mainFrame1.setScore(2048);
+	mainFrame1.setScore(0);
+
+	board1.clearBoard();
 	board1.initialize();
+	board1.randomTile();
+	board1.randomTile();
+
 	for (int row = 0; row < 4; row++) {
 		for (int col = 0; col < 4; col++) {
 			int value = board1.getValue(row, col);
@@ -118,22 +123,30 @@ extern osMessageQueueId_t directionQueueHandle;
 void Screen1View::handleTickEvent() {
 	Screen1ViewBase::handleTickEvent();
 }
-void Screen1View::tickEvent()
-{
-    static int tickCounter = 0;
-    tickCounter++;
+void Screen1View::tickEvent() {
+	static int tickCounter = 0;
+	tickCounter++;
 
-    if (tickCounter % 3 == 0) {
-        ::Direction dir = DIR_RIGHT;
-        if (osMessageQueueGet(directionQueueHandle, &dir, NULL, 0) == osOK) {
-            switch (dir) {
-                case DIR_LEFT:   handleJoystickLeft(); break;
-                case DIR_RIGHT:  handleJoystickRight(); break;
-                case DIR_UP:     handleJoystickUp(); break;
-                case DIR_DOWN:   handleJoystickDown(); break;
-                default: break;
-            }
-        }
-        tickCounter = 0;
-    }
+	if (tickCounter % 3 == 0) {
+		::Direction dir;
+		if (osMessageQueueGet(directionQueueHandle, &dir, NULL, 0) == osOK) {
+			switch (dir) {
+			case DIR_LEFT:
+				handleJoystickLeft();
+				break;
+			case DIR_RIGHT:
+				handleJoystickRight();
+				break;
+			case DIR_UP:
+				handleJoystickUp();
+				break;
+			case DIR_DOWN:
+				handleJoystickDown();
+				break;
+			default:
+				break;
+			}
+		}
+		tickCounter = 0;
+	}
 }

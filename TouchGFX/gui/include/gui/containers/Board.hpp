@@ -20,6 +20,7 @@ public:
 	bool canMove();
 	void mySrand(uint32_t s);
 	uint32_t myRand();
+	void clearBoard();
 protected:
 	touchgfx::Container* getContainer(int row, int col);
 	touchgfx::TextAreaWithOneWildcard* getTextArea(int row, int col);

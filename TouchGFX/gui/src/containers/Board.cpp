@@ -1,13 +1,13 @@
 #include <gui/containers/Board.hpp>
 #include "stm32f4xx_hal.h"
 
-int Board::board[4][4] = { 0 };
+int Board::board[4][4];
 uint32_t Board::seed = 1;
 touchgfx::Unicode::UnicodeChar Board::textBuffers[16][10];
 
 Board::Board() {
-	Board::board[0][3] = 2;
-	Board::board[0][1] = 2;
+	Board::randomTile();
+	Board::randomTile();
 }
 
 void Board::initialize() {
@@ -16,27 +16,32 @@ void Board::initialize() {
 }
 
 void Board::mySrand(uint32_t s) {
-    seed = s;
+	seed = s;
 }
 
 uint32_t Board::myRand() {
-    seed = seed * 1103515245 + 12345;
-    return (seed / 65536) % 32768;
+	seed = seed * 1103515245 + 12345;
+	return (seed / 65536) % 32768;
 }
 
 void Board::updateDisplay(int row, int col, int value) {
-	touchgfx::Container *container = getContainer(row, col);
-	touchgfx::TextAreaWithOneWildcard *textArea = getTextArea(row, col);
+    touchgfx::Container *container = getContainer(row, col);
+    touchgfx::TextAreaWithOneWildcard *textArea = getTextArea(row, col);
+    int index = row * 4 + col;
 
-	if (value == 0) {
-		container->setVisible(false);
-	} else {
-		container->setVisible(true);
-		int index = row * 4 + col;
-		touchgfx::Unicode::snprintf(textBuffers[index], 10, "%d", value);
-		textArea->setWildcard(textBuffers[index]);
-		textArea->invalidate();
-	}
+    if (value == 0) {
+        container->setVisible(false);
+        touchgfx::Unicode::snprintf(textBuffers[index], 10, "");
+        textArea->setWildcard(textBuffers[index]);
+        container->invalidate();
+        textArea->invalidate();
+    } else {
+        container->setVisible(true);
+        touchgfx::Unicode::snprintf(textBuffers[index], 10, "%d", value);
+        textArea->setWildcard(textBuffers[index]);
+        container->invalidate();
+        textArea->invalidate();
+    }
 }
 
 int Board::getValue(int row, int col) const {
@@ -44,28 +49,28 @@ int Board::getValue(int row, int col) const {
 }
 
 void Board::randomTile() {
-    int emptyCount = 0;
-    int emptyCellsRow[16];
-    int emptyCellsCol[16];
+	int emptyCount = 0;
+	int emptyCellsRow[16];
+	int emptyCellsCol[16];
 
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            if (board[i][j] == 0) {
-                emptyCellsRow[emptyCount] = i;
-                emptyCellsCol[emptyCount] = j;
-                emptyCount++;
-            }
-        }
-    }
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (board[i][j] == 0) {
+				emptyCellsRow[emptyCount] = i;
+				emptyCellsCol[emptyCount] = j;
+				emptyCount++;
+			}
+		}
+	}
 
-    if (emptyCount > 0) {
-        int idx = myRand() % emptyCount;
-        int row = emptyCellsRow[idx];
-        int col = emptyCellsCol[idx];
+	if (emptyCount > 0) {
+		int idx = myRand() % emptyCount;
+		int row = emptyCellsRow[idx];
+		int col = emptyCellsCol[idx];
 
-        int value = (myRand() % 10 == 0) ? 4 : 2;
-        board[row][col] = value;
-    }
+		int value = (myRand() % 10 == 0) ? 4 : 2;
+		board[row][col] = value;
+	}
 }
 
 bool Board::moveLeft() {
@@ -90,7 +95,8 @@ bool Board::moveLeft() {
 	// Step 2: Merge
 	for (int row = 0; row < 4; row++) {
 		for (int col = 0; col < 3; col++) {
-			if (Board::board[row][col] == Board::board[row][col + 1] && Board::board[row][col] != 0) {
+			if (Board::board[row][col] == Board::board[row][col + 1]
+					&& Board::board[row][col] != 0) {
 				Board::board[row][col] *= 2;
 				Board::board[row][col + 1] = 0;
 				moved = true;
@@ -117,7 +123,6 @@ bool Board::moveLeft() {
 	return moved;
 }
 
-
 bool Board::moveRight() {
 	bool moved = false;
 
@@ -140,7 +145,8 @@ bool Board::moveRight() {
 	// Step 2: Merge
 	for (int row = 0; row < 4; row++) {
 		for (int col = 3; col > 0; col--) {
-			if (Board::board[row][col] == Board::board[row][col - 1] && Board::board[row][col] != 0) {
+			if (Board::board[row][col] == Board::board[row][col - 1]
+					&& Board::board[row][col] != 0) {
 				Board::board[row][col] *= 2;
 				Board::board[row][col - 1] = 0;
 				moved = true;
@@ -167,7 +173,6 @@ bool Board::moveRight() {
 	return moved;
 }
 
-
 bool Board::moveUp() {
 	bool moved = false;
 
@@ -190,7 +195,8 @@ bool Board::moveUp() {
 	// Step 2: Merge
 	for (int col = 0; col < 4; col++) {
 		for (int row = 0; row < 3; row++) {
-			if (Board::board[row][col] == Board::board[row + 1][col] && Board::board[row][col] != 0) {
+			if (Board::board[row][col] == Board::board[row + 1][col]
+					&& Board::board[row][col] != 0) {
 				Board::board[row][col] *= 2;
 				Board::board[row + 1][col] = 0;
 				moved = true;
@@ -217,7 +223,6 @@ bool Board::moveUp() {
 	return moved;
 }
 
-
 bool Board::moveDown() {
 	bool moved = false;
 
@@ -240,7 +245,8 @@ bool Board::moveDown() {
 	// Step 2: Merge
 	for (int col = 0; col < 4; col++) {
 		for (int row = 3; row > 0; row--) {
-			if (Board::board[row][col] == Board::board[row - 1][col] && Board::board[row][col] != 0) {
+			if (Board::board[row][col] == Board::board[row - 1][col]
+					&& Board::board[row][col] != 0) {
 				Board::board[row][col] *= 2;
 				Board::board[row - 1][col] = 0;
 				moved = true;
@@ -267,7 +273,6 @@ bool Board::moveDown() {
 	return moved;
 }
 
-
 bool Board::canMove() {
 	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 4; j++) {
@@ -280,6 +285,14 @@ bool Board::canMove() {
 		}
 	}
 	return false;
+}
+
+void Board::clearBoard() {
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			board[i][j] = 0;
+		}
+	}
 }
 
 int Board::getScore() {
