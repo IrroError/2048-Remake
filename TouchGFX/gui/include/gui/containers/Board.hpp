@@ -12,18 +12,21 @@ public:
 	void updateDisplay(int row, int col, int value);
 	int getValue(int row, int col) const;
 	int getScore();
-	void addRandomTile();
+	void randomTile();
 	bool moveLeft();
 	bool moveRight();
 	bool moveUp();
 	bool moveDown();
 	bool canMove();
+	void mySrand(uint32_t s);
+	uint32_t myRand();
 protected:
 	touchgfx::Container* getContainer(int row, int col);
 	touchgfx::TextAreaWithOneWildcard* getTextArea(int row, int col);
 private:
 	static int board[4][4];
 	static touchgfx::Unicode::UnicodeChar textBuffers[16][10];
+	static uint32_t seed;
 };
 
 #endif // BOARD_HPP

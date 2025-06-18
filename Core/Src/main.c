@@ -168,7 +168,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
 	    int16_t x_offset = (int16_t)adc_buf[0] - CENTER_X;
 	    int16_t y_offset = (int16_t)adc_buf[1] - CENTER_Y;
 
-	    Direction dir = DIR_NEUTRAL;
+	    Direction dir = DIR_RIGHT;
 
 	    if (x_offset > DEADZONE)
 	        dir = DIR_RIGHT;
@@ -427,7 +427,7 @@ static void MX_ADC2_Init(void)
 
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
   */
-  sConfig.Channel = ADC_CHANNEL_13;
+  sConfig.Channel = ADC_CHANNEL_5;
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)

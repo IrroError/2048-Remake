@@ -9,7 +9,7 @@ C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/gui/src/screen1_screen/Screen
 C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:54:6:void Screen1View::handleJoystickDown()	4
 C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:71:6:void Screen1View::handleJoystickLeft()	4
 C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:88:6:void Screen1View::handleJoystickRight()	4
-C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:121:6:virtual void Screen1View::tickEvent()	7
+C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:121:6:virtual void Screen1View::tickEvent()	2
 C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:20:6:virtual void Screen1View::setupScreen()	3
 C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:105:6:void Screen1View::handleResetGame()	3
 C:/TouchGFXProjects/2048_Game/2048-Remake/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:15:13:void resetGameCallback()	2

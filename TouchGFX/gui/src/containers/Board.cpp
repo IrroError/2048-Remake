@@ -1,8 +1,8 @@
 #include <gui/containers/Board.hpp>
-#include <bits/stdc++.h>
-using namespace std;
+#include "stm32f4xx_hal.h"
 
 int Board::board[4][4] = { 0 };
+uint32_t Board::seed = 1;
 touchgfx::Unicode::UnicodeChar Board::textBuffers[16][10];
 
 Board::Board() {
@@ -12,6 +12,16 @@ Board::Board() {
 
 void Board::initialize() {
 	BoardBase::initialize();
+	Board::mySrand(HAL_GetTick());
+}
+
+void Board::mySrand(uint32_t s) {
+    seed = s;
+}
+
+uint32_t Board::myRand() {
+    seed = seed * 1103515245 + 12345;
+    return (seed / 65536) % 32768;
 }
 
 void Board::updateDisplay(int row, int col, int value) {
@@ -33,35 +43,36 @@ int Board::getValue(int row, int col) const {
 	return Board::board[row][col];
 }
 
-void Board::addRandomTile() {
-	vector<pair<int, int>> emptyCells;
-	for (int i = 0; i < 4; i++) {
-		for (int j = 0; j < 4; j++) {
-			if (Board::board[i][j] == 0) {
-				emptyCells.push_back( { i, j });
-			}
-		}
-	}
+void Board::randomTile() {
+    int emptyCount = 0;
+    int emptyCellsRow[16];
+    int emptyCellsCol[16];
 
-	if (!emptyCells.empty()) {
-		int idx = rand() % emptyCells.size();
-		int value = (rand() % 10 == 0) ? 4 : 2;
-		Board::board[emptyCells[idx].first][emptyCells[idx].second] = value;
-	}
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            if (board[i][j] == 0) {
+                emptyCellsRow[emptyCount] = i;
+                emptyCellsCol[emptyCount] = j;
+                emptyCount++;
+            }
+        }
+    }
+
+    if (emptyCount > 0) {
+        int idx = myRand() % emptyCount;
+        int row = emptyCellsRow[idx];
+        int col = emptyCellsCol[idx];
+
+        int value = (myRand() % 10 == 0) ? 4 : 2;
+        board[row][col] = value;
+    }
 }
 
 bool Board::moveLeft() {
 	bool moved = false;
-	for (int row = 0; row < 4; row++) {
-		for (int col = 0; col < 3; col++) {
-			if (Board::board[row][col] == Board::board[row][col + 1]
-					&& Board::board[row][col] != 0) {
-				Board::board[row][col] *= 2;
-				Board::board[row][col + 1] = 0;
-				moved = true;
-			}
-		}
 
+	// Step 1: Slide all numbers to the left
+	for (int row = 0; row < 4; row++) {
 		for (int col = 0; col < 3; col++) {
 			if (Board::board[row][col] == 0) {
 				for (int k = col + 1; k < 4; k++) {
@@ -75,21 +86,43 @@ bool Board::moveLeft() {
 			}
 		}
 	}
-	return moved;
-}
 
-bool Board::moveRight() {
-	bool moved = false;
+	// Step 2: Merge
 	for (int row = 0; row < 4; row++) {
-		for (int col = 3; col > 0; col--) {
-			if (Board::board[row][col] == Board::board[row][col - 1]
-					&& Board::board[row][col] != 0) {
+		for (int col = 0; col < 3; col++) {
+			if (Board::board[row][col] == Board::board[row][col + 1] && Board::board[row][col] != 0) {
 				Board::board[row][col] *= 2;
-				Board::board[row][col - 1] = 0;
+				Board::board[row][col + 1] = 0;
 				moved = true;
 			}
 		}
+	}
 
+	// Step 3: Slide again
+	for (int row = 0; row < 4; row++) {
+		for (int col = 0; col < 3; col++) {
+			if (Board::board[row][col] == 0) {
+				for (int k = col + 1; k < 4; k++) {
+					if (Board::board[row][k] != 0) {
+						Board::board[row][col] = Board::board[row][k];
+						Board::board[row][k] = 0;
+						moved = true;
+						break;
+					}
+				}
+			}
+		}
+	}
+
+	return moved;
+}
+
+
+bool Board::moveRight() {
+	bool moved = false;
+
+	// Step 1: Slide
+	for (int row = 0; row < 4; row++) {
 		for (int col = 3; col > 0; col--) {
 			if (Board::board[row][col] == 0) {
 				for (int k = col - 1; k >= 0; k--) {
@@ -103,21 +136,43 @@ bool Board::moveRight() {
 			}
 		}
 	}
-	return moved;
-}
 
-bool Board::moveUp() {
-	bool moved = false;
-	for (int col = 0; col < 4; col++) {
-		for (int row = 0; row < 3; row++) {
-			if (Board::board[row][col] == Board::board[row + 1][col]
-					&& Board::board[row][col] != 0) {
+	// Step 2: Merge
+	for (int row = 0; row < 4; row++) {
+		for (int col = 3; col > 0; col--) {
+			if (Board::board[row][col] == Board::board[row][col - 1] && Board::board[row][col] != 0) {
 				Board::board[row][col] *= 2;
-				Board::board[row + 1][col] = 0;
+				Board::board[row][col - 1] = 0;
 				moved = true;
 			}
 		}
+	}
 
+	// Step 3: Slide again
+	for (int row = 0; row < 4; row++) {
+		for (int col = 3; col > 0; col--) {
+			if (Board::board[row][col] == 0) {
+				for (int k = col - 1; k >= 0; k--) {
+					if (Board::board[row][k] != 0) {
+						Board::board[row][col] = Board::board[row][k];
+						Board::board[row][k] = 0;
+						moved = true;
+						break;
+					}
+				}
+			}
+		}
+	}
+
+	return moved;
+}
+
+
+bool Board::moveUp() {
+	bool moved = false;
+
+	// Step 1: Slide
+	for (int col = 0; col < 4; col++) {
 		for (int row = 0; row < 3; row++) {
 			if (Board::board[row][col] == 0) {
 				for (int k = row + 1; k < 4; k++) {
@@ -131,21 +186,43 @@ bool Board::moveUp() {
 			}
 		}
 	}
-	return moved;
-}
 
-bool Board::moveDown() {
-	bool moved = false;
+	// Step 2: Merge
 	for (int col = 0; col < 4; col++) {
-		for (int row = 3; row > 0; row--) {
-			if (Board::board[row][col] == Board::board[row - 1][col]
-					&& Board::board[row][col] != 0) {
+		for (int row = 0; row < 3; row++) {
+			if (Board::board[row][col] == Board::board[row + 1][col] && Board::board[row][col] != 0) {
 				Board::board[row][col] *= 2;
-				Board::board[row - 1][col] = 0;
+				Board::board[row + 1][col] = 0;
 				moved = true;
 			}
 		}
+	}
 
+	// Step 3: Slide again
+	for (int col = 0; col < 4; col++) {
+		for (int row = 0; row < 3; row++) {
+			if (Board::board[row][col] == 0) {
+				for (int k = row + 1; k < 4; k++) {
+					if (Board::board[k][col] != 0) {
+						Board::board[row][col] = Board::board[k][col];
+						Board::board[k][col] = 0;
+						moved = true;
+						break;
+					}
+				}
+			}
+		}
+	}
+
+	return moved;
+}
+
+
+bool Board::moveDown() {
+	bool moved = false;
+
+	// Step 1: Slide
+	for (int col = 0; col < 4; col++) {
 		for (int row = 3; row > 0; row--) {
 			if (Board::board[row][col] == 0) {
 				for (int k = row - 1; k >= 0; k--) {
@@ -159,8 +236,37 @@ bool Board::moveDown() {
 			}
 		}
 	}
+
+	// Step 2: Merge
+	for (int col = 0; col < 4; col++) {
+		for (int row = 3; row > 0; row--) {
+			if (Board::board[row][col] == Board::board[row - 1][col] && Board::board[row][col] != 0) {
+				Board::board[row][col] *= 2;
+				Board::board[row - 1][col] = 0;
+				moved = true;
+			}
+		}
+	}
+
+	// Step 3: Slide again
+	for (int col = 0; col < 4; col++) {
+		for (int row = 3; row > 0; row--) {
+			if (Board::board[row][col] == 0) {
+				for (int k = row - 1; k >= 0; k--) {
+					if (Board::board[k][col] != 0) {
+						Board::board[row][col] = Board::board[k][col];
+						Board::board[k][col] = 0;
+						moved = true;
+						break;
+					}
+				}
+			}
+		}
+	}
+
 	return moved;
 }
+
 
 bool Board::canMove() {
 	for (int i = 0; i < 4; i++) {

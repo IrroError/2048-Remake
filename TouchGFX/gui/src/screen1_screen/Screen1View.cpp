@@ -36,7 +36,7 @@ void Screen1View::tearDownScreen() {
 
 void Screen1View::handleJoystickUp() {
 	if (board1.moveUp()) {
-		board1.addRandomTile();
+		board1.randomTile();
 		for (int row = 0; row < 4; row++) {
 			for (int col = 0; col < 4; col++) {
 				int value = board1.getValue(row, col);
@@ -53,7 +53,7 @@ void Screen1View::handleJoystickUp() {
 
 void Screen1View::handleJoystickDown() {
 	if (board1.moveDown()) {
-		board1.addRandomTile();
+		board1.randomTile();
 		for (int row = 0; row < 4; row++) {
 			for (int col = 0; col < 4; col++) {
 				int value = board1.getValue(row, col);
@@ -70,7 +70,7 @@ void Screen1View::handleJoystickDown() {
 
 void Screen1View::handleJoystickLeft() {
 	if (board1.moveLeft()) {
-		board1.addRandomTile();
+		board1.randomTile();
 		for (int row = 0; row < 4; row++) {
 			for (int col = 0; col < 4; col++) {
 				int value = board1.getValue(row, col);
@@ -87,7 +87,7 @@ void Screen1View::handleJoystickLeft() {
 
 void Screen1View::handleJoystickRight() {
 	if (board1.moveRight()) {
-		board1.addRandomTile();
+		board1.randomTile();
 		for (int row = 0; row < 4; row++) {
 			for (int col = 0; col < 4; col++) {
 				int value = board1.getValue(row, col);
@@ -124,7 +124,7 @@ void Screen1View::tickEvent()
     tickCounter++;
 
     if (tickCounter % 3 == 0) {
-        ::Direction dir;
+        ::Direction dir = DIR_RIGHT;
         if (osMessageQueueGet(directionQueueHandle, &dir, NULL, 0) == osOK) {
             switch (dir) {
                 case DIR_LEFT:   handleJoystickLeft(); break;
