@@ -1,6 +1,6 @@
 #include <gui/screen1_screen/Screen1View.hpp>
 #include "cmsis_os2.h"
-#include "Direction.h"
+#include "gui/common/Direction.hpp"
 
 Screen1View *Screen1View::instance = nullptr;
 
