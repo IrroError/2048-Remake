@@ -1,13 +1,12 @@
 #include <gui/containers/Board.hpp>
-#include <bits/stdc++.h>
-using namespace std;
 
 int Board::board[4][4] = { 0 };
 touchgfx::Unicode::UnicodeChar Board::textBuffers[16][10];
 
 Board::Board() {
-	Board::board[0][3] = 2;
-	Board::board[0][1] = 2;
+	// Initialize with tiles that can actually move
+	Board::board[1][1] = 2;  // Middle position - can move in all directions
+	Board::board[2][2] = 2;  // Another middle position
 }
 
 void Board::initialize() {
@@ -18,14 +17,28 @@ void Board::updateDisplay(int row, int col, int value) {
 	touchgfx::Container *container = getContainer(row, col);
 	touchgfx::TextAreaWithOneWildcard *textArea = getTextArea(row, col);
 
+	#ifdef HAL_UART_MODULE_ENABLED
+	extern UART_HandleTypeDef huart1;
+	char msg[100];
+	if (value != 0) {  // Only log non-zero tiles to reduce output
+		int len = snprintf(msg, sizeof(msg), "### TILE: [%d][%d]=%d\r\n", row, col, value);
+		HAL_UART_Transmit(&huart1, (uint8_t*)msg, len, HAL_MAX_DELAY);
+	}
+	#endif
+
 	if (value == 0) {
 		container->setVisible(false);
+		container->invalidate();  // Invalidate when hiding
 	} else {
 		container->setVisible(true);
 		int index = row * 4 + col;
 		touchgfx::Unicode::snprintf(textBuffers[index], 10, "%d", value);
 		textArea->setWildcard(textBuffers[index]);
+		
+		// Force multiple invalidations
+		textArea->invalidateContent();
 		textArea->invalidate();
+		container->invalidate();
 	}
 }
 
@@ -34,20 +47,47 @@ int Board::getValue(int row, int col) const {
 }
 
 void Board::addRandomTile() {
-	vector<pair<int, int>> emptyCells;
+	// Find all empty cells using simple arrays (no STL!)
+	int emptyRows[16];    // Max 16 empty cells in 4x4 grid
+	int emptyCols[16];
+	int emptyCount = 0;
+	
+	// Collect all empty positions
 	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 4; j++) {
 			if (Board::board[i][j] == 0) {
-				emptyCells.push_back( { i, j });
+				emptyRows[emptyCount] = i;
+				emptyCols[emptyCount] = j;
+				emptyCount++;
 			}
 		}
 	}
-
-	if (!emptyCells.empty()) {
-		int idx = rand() % emptyCells.size();
-		int value = (rand() % 10 == 0) ? 4 : 2;
-		Board::board[emptyCells[idx].first][emptyCells[idx].second] = value;
+	
+	// If no empty cells, return
+	if (emptyCount == 0) {
+		return;
 	}
+	
+	// Simple pseudo-random selection using a static counter
+	static int randomCounter = 0;
+	randomCounter += 7;  // Prime number for better distribution
+	int selectedIndex = randomCounter % emptyCount;
+	
+	int row = emptyRows[selectedIndex];
+	int col = emptyCols[selectedIndex];
+	
+	// Simple pseudo-random value: mostly 2s, occasionally 4s
+	int value = ((randomCounter % 10) < 9) ? 2 : 4;
+	
+	Board::board[row][col] = value;
+	
+	#ifdef HAL_UART_MODULE_ENABLED
+	extern UART_HandleTypeDef huart1;
+	char msg[100];
+	int len = snprintf(msg, sizeof(msg), "*** RANDOM: Added %d at [%d][%d] (from %d empty)\r\n", 
+	                   value, row, col, emptyCount);
+	HAL_UART_Transmit(&huart1, (uint8_t*)msg, len, HAL_MAX_DELAY);
+	#endif
 }
 
 bool Board::moveLeft() {
@@ -265,3 +305,4 @@ touchgfx::TextAreaWithOneWildcard* Board::getTextArea(int row, int col) {
 		return nullptr;
 	}
 }
+

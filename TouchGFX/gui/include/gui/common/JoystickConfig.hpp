@@ -12,24 +12,27 @@
  * - SW: Can be connected to PA0, PA1, or PA2 (not configured yet)
  */
 
-/* Joystick calibration values - adjust these based on your hardware */
-#define JOYSTICK_X_MIN          100     // Minimum X value (left)
-#define JOYSTICK_X_MAX          3900    // Maximum X value (right)
-#define JOYSTICK_X_CENTER       2048    // Center X value (neutral)
+/* Joystick calibration values - Based on JOYSTICK_TEST_REPORT.md */
+#define JOYSTICK_X_MIN          10      // Minimum X value (left)
+#define JOYSTICK_X_MAX          4090    // Maximum X value (right)
+#define JOYSTICK_X_CENTER       2085    // Center X value (neutral) - Calibrated
 
-#define JOYSTICK_Y_MIN          100     // Minimum Y value (up)
-#define JOYSTICK_Y_MAX          3900    // Maximum Y value (down)
-#define JOYSTICK_Y_CENTER       2048    // Center Y value (neutral)
+#define JOYSTICK_Y_MIN          10      // Minimum Y value (up)
+#define JOYSTICK_Y_MAX          4090    // Maximum Y value (down)
+#define JOYSTICK_Y_CENTER       2060    // Center Y value (neutral) - Calibrated
 
-/* Deadzone configuration */
-#define JOYSTICK_DEADZONE_X     200     // X-axis deadzone
-#define JOYSTICK_DEADZONE_Y     200     // Y-axis deadzone
+/* Deadzone configuration - Based on test report */
+#define JOYSTICK_DEADZONE_X     150     // X-axis deadzone - More sensitive
+#define JOYSTICK_DEADZONE_Y     150     // Y-axis deadzone - More sensitive
 
 /* Movement thresholds */
 #define JOYSTICK_THRESHOLD_LOW_X    (JOYSTICK_X_CENTER - JOYSTICK_DEADZONE_X)
 #define JOYSTICK_THRESHOLD_HIGH_X   (JOYSTICK_X_CENTER + JOYSTICK_DEADZONE_X)
 #define JOYSTICK_THRESHOLD_LOW_Y    (JOYSTICK_Y_CENTER - JOYSTICK_DEADZONE_Y)
 #define JOYSTICK_THRESHOLD_HIGH_Y   (JOYSTICK_Y_CENTER + JOYSTICK_DEADZONE_Y)
+
+/* Direction detection threshold - Based on test report */
+#define JOYSTICK_THRESHOLD          1500   // Direction trigger point - Calibrated
 
 /* Timing configuration */
 #define JOYSTICK_DEBOUNCE_TIME_MS   150    // Debounce time in milliseconds

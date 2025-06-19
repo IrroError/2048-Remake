@@ -61,6 +61,25 @@ void Joystick_Task(void);
  */
 void Joystick_GetRawValues(uint16_t* x_raw, uint16_t* y_raw);
 
+/**
+ * @brief  Test function to verify joystick is working correctly
+ * @note   This function reads raw values and can be used with debugger
+ * @retval 1 if readings are in expected range, 0 otherwise
+ */
+uint8_t Joystick_TestReadings(void);
+
+/**
+ * @brief  Initialize joystick debug output via UART
+ * @retval None
+ */
+void Joystick_InitDebug(void);
+
+/**
+ * @brief  Simple ADC test function for debugging
+ * @retval None
+ */
+void Joystick_DebugTest(void);
+
 /* Exported variables --------------------------------------------------------*/
 extern osMessageQueueId_t directionQueueHandle;
 
