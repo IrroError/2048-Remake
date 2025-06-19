@@ -17,7 +17,7 @@ typedef enum {
     DIR_RIGHT,       ///< Joystick moved right  
     DIR_UP,          ///< Joystick moved up
     DIR_DOWN         ///< Joystick moved down
-} Direction;
+} GameDirection;
 
 /**
  * @brief ADC threshold values for joystick direction detection
@@ -37,7 +37,7 @@ typedef enum {
 /**
  * @brief Function prototypes for joystick handling
  */
-Direction Joystick_GetDirection(void);
+GameDirection Joystick_GetDirection(void);
 void Joystick_Init(void);
 uint16_t Joystick_ReadX(void);
 uint16_t Joystick_ReadY(void);

@@ -43,9 +43,9 @@ uint16_t Joystick_ReadY(void);
 
 /**
  * @brief  Get current joystick direction with debouncing
- * @retval Direction enum value
+ * @retval GameDirection enum value
  */
-Direction Joystick_GetDirection(void);
+GameDirection Joystick_GetDirection(void);
 
 /**
  * @brief  Joystick polling task (should be called periodically)

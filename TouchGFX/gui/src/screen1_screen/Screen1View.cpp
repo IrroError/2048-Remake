@@ -124,7 +124,7 @@ void Screen1View::tickEvent()
     tickCounter++;
 
     if (tickCounter % 3 == 0) {
-        ::Direction dir;
+        GameDirection dir;
         if (osMessageQueueGet(directionQueueHandle, &dir, NULL, 0) == osOK) {
             switch (dir) {
                 case DIR_LEFT:   handleJoystickLeft(); break;
