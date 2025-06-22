@@ -1,5 +1,5 @@
 Application/User/generated/UnmappedDataFont.o: \
- C:/TouchGFXProjects/2048_Game/TouchGFX/generated/fonts/src/UnmappedDataFont.cpp \
+ D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/generated/fonts/src/UnmappedDataFont.cpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/FlashDataReader.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp \

@@ -1,5 +1,5 @@
 Application/User/generated/Kerning_verdana_40_4bpp.o: \
- C:/TouchGFXProjects/2048_Game/TouchGFX/generated/fonts/src/Kerning_verdana_40_4bpp.cpp \
+ D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/generated/fonts/src/Kerning_verdana_40_4bpp.cpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \

@@ -1,5 +1,5 @@
 Application/User/generated/Table_verdana_12_4bpp.o: \
- C:/TouchGFXProjects/2048_Game/TouchGFX/generated/fonts/src/Table_verdana_12_4bpp.cpp \
+ D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/generated/fonts/src/Table_verdana_12_4bpp.cpp \
  ../../TouchGFX/generated/fonts/include/fonts/GeneratedFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/ConstFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

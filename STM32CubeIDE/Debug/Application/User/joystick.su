@@ -1,0 +1,10 @@
+../Application/User/joystick.c:102:22:Joystick_AnalyzeDirection	0	static
+../Application/User/joystick.c:70:10:Joystick_ReadX	16	static
+../Application/User/joystick.c:85:10:Joystick_ReadY	16	static
+../Application/User/joystick.c:49:6:Joystick_Init	8	static
+../Application/User/joystick.c:153:15:Joystick_GetDirection	80	static
+../Application/User/joystick.c:199:6:Joystick_Task	96	static
+../Application/User/joystick.c:229:6:Joystick_GetRawValues	0	static
+../Application/User/joystick.c:240:9:Joystick_TestReadings	8	static
+../Application/User/joystick.c:304:6:Joystick_InitDebug	0	static
+../Application/User/joystick.c:318:6:Joystick_DebugTest	16	static

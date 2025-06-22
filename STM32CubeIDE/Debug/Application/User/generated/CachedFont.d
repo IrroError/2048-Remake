@@ -1,5 +1,5 @@
 Application/User/generated/CachedFont.o: \
- C:/TouchGFXProjects/2048_Game/TouchGFX/generated/fonts/src/CachedFont.cpp \
+ D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/generated/fonts/src/CachedFont.cpp \
  ../../TouchGFX/generated/fonts/include/fonts/CachedFont.hpp \
  ../../TouchGFX/generated/fonts/include/fonts/FontCache.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

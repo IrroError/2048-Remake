@@ -12,16 +12,19 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     void setFinalScore(int score);
+    void setHighestScore(int score);
     void setGameResult(bool won);
     void handlePlayAgainButtonClicked();
     void handleTickEvent() override;
-    void tickEvent() override;
+    void tickEvent();
     
 protected:
 private:
     int finalScore;
+    int highestScore;
     bool gameWon;
     static touchgfx::Unicode::UnicodeChar scoreBuffer[10];
+    static touchgfx::Unicode::UnicodeChar highestScoreBuffer[10];
 };
 
 #endif // SCREEN2VIEW_HPP 

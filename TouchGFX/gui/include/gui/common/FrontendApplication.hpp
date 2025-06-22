@@ -24,9 +24,14 @@ public:
     int getEndGameScore() const { return endGameScore; }
     bool getEndGameWon() const { return endGameWon; }
     
+    // Highest score methods
+    int getHighestScore() const { return highestScore; }
+    void updateHighestScore(int newScore);
+    
 private:
     int endGameScore;
     bool endGameWon;
+    static int highestScore; // Static to persist across game sessions
 };
 
 #endif // FRONTENDAPPLICATION_HPP

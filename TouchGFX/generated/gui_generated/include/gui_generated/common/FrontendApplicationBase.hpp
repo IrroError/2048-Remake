@@ -22,8 +22,8 @@ public:
 
     // Screen1
     void gotoScreen1ScreenNoTransition();
-    
-    // Screen2 (EndGame)
+
+    // Screen2
     void gotoScreen2ScreenNoTransition();
 
 protected:
@@ -33,8 +33,8 @@ protected:
 
     // Screen1
     void gotoScreen1ScreenNoTransitionImpl();
-    
-    // Screen2 (EndGame)
+
+    // Screen2
     void gotoScreen2ScreenNoTransitionImpl();
 };
 

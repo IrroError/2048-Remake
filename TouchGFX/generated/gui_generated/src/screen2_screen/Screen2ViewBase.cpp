@@ -3,7 +3,6 @@
 /*********************************************************************************/
 #include <gui_generated/screen2_screen/Screen2ViewBase.hpp>
 #include <touchgfx/Color.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
 
 Screen2ViewBase::Screen2ViewBase()
 {
@@ -11,36 +10,8 @@ Screen2ViewBase::Screen2ViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    // Title box background
-    titleBox.setPosition(20, 50, 200, 60);
-    titleBox.setColor(touchgfx::Color::getColorFromRGB(50, 50, 50));
-    add(titleBox);
-
-    // Title text (Game Over / You Won)
-    titleText.setPosition(30, 65, 180, 30);
-    titleText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    titleText.setLinespacing(0);
-    titleText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_K26Y)); // Using "Exit" as placeholder
-    add(titleText);
-
-    // Score label
-    scoreLabel.setPosition(50, 140, 140, 25);
-    scoreLabel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    scoreLabel.setLinespacing(0);
-    scoreLabel.setTypedText(touchgfx::TypedText(T___SINGLEUSE_L2L5)); // "Score: <value>"
-    add(scoreLabel);
-
-    // Score value
-    scoreValue.setPosition(50, 170, 140, 30);
-    scoreValue.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
-    scoreValue.setLinespacing(0);
-    scoreValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_1EI4)); // "<value>" placeholder
-    add(scoreValue);
-
-    // Play Again button - simplified as a colored box
-    playAgainButton.setPosition(70, 220, 100, 40);
-    playAgainButton.setColor(touchgfx::Color::getColorFromRGB(100, 150, 200));
-    add(playAgainButton);
+    endGameFrame1.setXY(0, 0);
+    add(endGameFrame1);
 }
 
 Screen2ViewBase::~Screen2ViewBase()
@@ -50,7 +21,7 @@ Screen2ViewBase::~Screen2ViewBase()
 
 void Screen2ViewBase::setupScreen()
 {
-
+    endGameFrame1.initialize();
 }
 
 void Screen2ViewBase::handleTickEvent()
@@ -60,5 +31,3 @@ void Screen2ViewBase::handleTickEvent()
     //Call tickEvent
     tickEvent();
 }
-
- 

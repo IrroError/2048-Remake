@@ -33,6 +33,19 @@
             }
           }
         ]
+      },
+      {
+        "Name": "Screen2",
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "endGameFrame1",
+            "Width": 240,
+            "Height": 320,
+            "CustomContainerDefinitionName": "EndGameFrame"
+          }
+        ],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [
@@ -788,6 +801,72 @@
             }
           }
         ]
+      },
+      {
+        "Name": "EndGameFrame",
+        "Width": 240,
+        "Height": 320,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 240,
+            "Height": 320,
+            "LockPosition": true,
+            "Color": {
+              "Red": 230,
+              "Green": 224,
+              "Blue": 218
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Highest_Score",
+            "X": 38,
+            "Y": 160,
+            "Width": 165,
+            "Height": 17,
+            "TextId": "__SingleUse_92KM",
+            "TextRotation": "0",
+            "Wildcard1": {}
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Score",
+            "X": 32,
+            "Y": 116,
+            "Width": 176,
+            "Height": 18,
+            "TextId": "__SingleUse_MTBV",
+            "TextRotation": "0",
+            "Wildcard1": {}
+          },
+          {
+            "Type": "TextArea",
+            "Name": "You_win_or_Nice_try",
+            "X": 94,
+            "Y": 62,
+            "Width": 33,
+            "Height": 15,
+            "TextId": "__SingleUse_K9VO",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {}
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Replay",
+            "X": 24,
+            "Y": 217,
+            "Width": 192,
+            "Height": 15,
+            "LockPosition": true,
+            "TextId": "__SingleUse_VUEY",
+            "TextRotation": "0",
+            "AutoSize": true
+          }
+        ],
+        "Interactions": []
       }
     ],
     "Name": "MyApplication_4",

@@ -8,10 +8,7 @@
 #include <mvp/View.hpp>
 #include <gui/screen2_screen/Screen2Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
-#include <touchgfx/widgets/Button.hpp>
-#include <touchgfx/containers/buttons/Buttons.hpp>
+#include <gui/containers/EndGameFrame.hpp>
 
 class Screen2ViewBase : public touchgfx::View<Screen2Presenter>
 {
@@ -20,19 +17,7 @@ public:
     virtual ~Screen2ViewBase();
     virtual void setupScreen();
     virtual void handleTickEvent();
-
-    /*
-     * Virtual Action Handlers
-     */
-    virtual void tickEvent()
-    {
-        // Override and implement this function in Screen2
-    }
-    
-    virtual void handlePlayAgainButtonClicked()
-    {
-        // Override and implement this function in Screen2
-    }
+    virtual void tickEvent() { }
 
 protected:
     FrontendApplication& application() {
@@ -43,13 +28,10 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Box titleBox;
-    touchgfx::TextArea titleText;
-    touchgfx::TextArea scoreLabel;
-    touchgfx::TextAreaWithOneWildcard scoreValue;
-    touchgfx::Box playAgainButton;
+    EndGameFrame endGameFrame1;
 
 private:
+
 };
 
-#endif // SCREEN2VIEWBASE_HPP 
+#endif // SCREEN2VIEWBASE_HPP

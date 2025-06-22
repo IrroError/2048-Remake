@@ -1,5 +1,5 @@
 Application/User/generated/FrontendApplicationBase.o: \
- C:/TouchGFXProjects/2048_Game/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp \
+ D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp \
@@ -78,6 +78,11 @@ Application/User/generated/FrontendApplicationBase.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
  ../../TouchGFX/gui/include/gui/containers/Board.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/BoardBase.hpp \
+ ../../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/screen2_screen/Screen2Presenter.hpp \
+ ../../TouchGFX/gui/include/gui/containers/EndGameFrame.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/EndGameFrameBase.hpp \
  ../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp
@@ -159,6 +164,11 @@ Application/User/generated/FrontendApplicationBase.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:
 ../../TouchGFX/gui/include/gui/containers/Board.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/BoardBase.hpp:
+../../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp:
+../../TouchGFX/gui/include/gui/screen2_screen/Screen2Presenter.hpp:
+../../TouchGFX/gui/include/gui/containers/EndGameFrame.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/EndGameFrameBase.hpp:
 ../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp:

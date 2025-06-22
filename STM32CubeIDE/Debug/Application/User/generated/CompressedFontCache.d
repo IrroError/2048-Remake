@@ -1,5 +1,5 @@
 Application/User/generated/CompressedFontCache.o: \
- C:/TouchGFXProjects/2048_Game/TouchGFX/generated/fonts/src/CompressedFontCache.cpp \
+ D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/generated/fonts/src/CompressedFontCache.cpp \
  ../../TouchGFX/generated/fonts/include/fonts/CompressedFontCache.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp \

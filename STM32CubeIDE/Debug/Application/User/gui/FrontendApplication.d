@@ -1,5 +1,5 @@
 Application/User/gui/FrontendApplication.o: \
- C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/common/FrontendApplication.cpp \
+ D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/common/FrontendApplication.cpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp \

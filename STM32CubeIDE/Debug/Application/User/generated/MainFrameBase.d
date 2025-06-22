@@ -1,5 +1,5 @@
 Application/User/generated/MainFrameBase.o: \
- C:/TouchGFXProjects/2048_Game/TouchGFX/generated/gui_generated/src/containers/MainFrameBase.cpp \
+ D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/generated/gui_generated/src/containers/MainFrameBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/MainFrameBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \

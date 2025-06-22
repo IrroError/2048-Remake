@@ -1,4 +1,4 @@
-C:/TouchGFXProjects/2048_Game/TouchGFX/App/app_touchgfx.c:58:6:MX_TouchGFX_PreOSInit	1
-C:/TouchGFXProjects/2048_Game/TouchGFX/App/app_touchgfx.c:65:6:MX_TouchGFX_Init	1
-C:/TouchGFXProjects/2048_Game/TouchGFX/App/app_touchgfx.c:75:6:MX_TouchGFX_Process	1
-C:/TouchGFXProjects/2048_Game/TouchGFX/App/app_touchgfx.c:84:6:TouchGFX_Task	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/App/app_touchgfx.c:58:6:MX_TouchGFX_PreOSInit	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/App/app_touchgfx.c:65:6:MX_TouchGFX_Init	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/App/app_touchgfx.c:75:6:MX_TouchGFX_Process	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/App/app_touchgfx.c:84:6:TouchGFX_Task	1

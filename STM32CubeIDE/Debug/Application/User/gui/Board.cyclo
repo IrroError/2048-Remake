@@ -9,22 +9,23 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:501:18:virtual void touchgfx::Drawable::handleTickEvent()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:165:23:virtual touchgfx::Drawable* touchgfx::Container::getFirstChild()	1
-../../TouchGFX/gui/include/gui/containers/Board.hpp:10:13:Board::~Board()	1
-../../TouchGFX/gui/include/gui/containers/Board.hpp:10:13:virtual Board::~Board()	1
+../../TouchGFX/gui/include/gui/containers/Board.hpp:9:10:Board::~Board()	1
+../../TouchGFX/gui/include/gui/containers/Board.hpp:9:10:virtual Board::~Board()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:8:1:Board::Board()	1
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:32:5:int Board::getValue(int, int) const	1
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:53:6:bool Board::moveLeft()	9
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:81:6:bool Board::moveRight()	9
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:109:6:bool Board::moveUp()	9
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:137:6:bool Board::moveDown()	9
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:165:6:bool Board::canMove()	7
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:179:5:int Board::getScore()	2
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:189:22:touchgfx::Container* Board::getContainer(int, int)	17
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:229:36:touchgfx::TextAreaWithOneWildcard* Board::getTextArea(int, int)	17
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:17:6:void Board::updateDisplay(int, int, int)	2
-C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {std::pair<int, int>}; _Tp = std::pair<int, int>; _Alloc = std::allocator<std::pair<int, int> >]	6
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:36:6:void Board::addRandomTile()	7
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:267:1:cpp)	1
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:267:1:cpp)	1
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/Board.cpp:13:6:virtual void Board::initialize()	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:7:1:Board::Board()	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:47:5:int Board::getValue(int, int) const	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:51:6:void Board::addRandomTile()	5
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:95:6:bool Board::moveLeft()	10
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:128:6:bool Board::moveRight()	10
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:161:6:bool Board::moveUp()	10
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:194:6:bool Board::moveDown()	10
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:227:6:bool Board::canMove() const	7
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:241:5:int Board::getScore()	2
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:252:6:bool Board::hasWon() const	5
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:265:6:bool Board::hasLost() const	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:270:6:bool Board::isGameOver() const	2
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:274:6:void Board::resetBoard()	2
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:290:22:touchgfx::Container* Board::getContainer(int, int)	17
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:330:36:touchgfx::TextAreaWithOneWildcard* Board::getTextArea(int, int)	17
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:18:6:void Board::updateDisplay(int, int, int)	2
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/Board.cpp:14:6:virtual void Board::initialize()	1

@@ -6,6 +6,18 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_VUEY" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Press any direction to play again</Translation>
+      </Text>
+      <Text Id="__SingleUse_92KM" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Highest Score: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_MTBV" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Score: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_K9VO" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">GGs! &lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_L2L5" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Score: &lt;value&gt;</Translation>
       </Text>
@@ -62,6 +74,18 @@
       </Text>
       <Text Id="__SingleUse_1PR5" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_BEST" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Highest Score:</Translation>
+      </Text>
+      <Text Id="__SingleUse_MOVE" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Move any direction to start a new game</Translation>
+      </Text>
+      <Text Id="__SingleUse_WON" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">You Won!</Translation>
+      </Text>
+      <Text Id="__SingleUse_OVER" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Game Over</Translation>
       </Text>
     </TextGroup>
   </Texts>

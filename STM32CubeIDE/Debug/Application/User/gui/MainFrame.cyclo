@@ -9,9 +9,10 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:501:18:virtual void touchgfx::Drawable::handleTickEvent()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:165:23:virtual touchgfx::Drawable* touchgfx::Container::getFirstChild()	1
-../../TouchGFX/gui/include/gui/containers/MainFrame.hpp:10:13:MainFrame::~MainFrame()	1
-../../TouchGFX/gui/include/gui/containers/MainFrame.hpp:10:13:virtual MainFrame::~MainFrame()	1
+../../TouchGFX/gui/include/gui/containers/MainFrame.hpp:20:15:virtual void MainFrame::handleResetButtonClicked()	2
+../../TouchGFX/gui/include/gui/containers/MainFrame.hpp:9:10:MainFrame::~MainFrame()	1
+../../TouchGFX/gui/include/gui/containers/MainFrame.hpp:9:10:virtual MainFrame::~MainFrame()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/MainFrame.cpp:4:1:MainFrame::MainFrame()	1
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/MainFrame.cpp:14:6:void MainFrame::setScore(int)	1
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/containers/MainFrame.cpp:9:6:virtual void MainFrame::initialize()	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/MainFrame.cpp:4:1:MainFrame::MainFrame()	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/MainFrame.cpp:14:6:void MainFrame::setScore(int)	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/MainFrame.cpp:9:6:virtual void MainFrame::initialize()	1

@@ -1,5 +1,5 @@
 Middlewares/FreeRTOS/timers.o: \
- C:/TouchGFXProjects/2048_Game/Middlewares/Third_Party/FreeRTOS/Source/timers.c \
+ D:/Hust/2024_2/Embeded/2048-Remake/Middlewares/Third_Party/FreeRTOS/Source/timers.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

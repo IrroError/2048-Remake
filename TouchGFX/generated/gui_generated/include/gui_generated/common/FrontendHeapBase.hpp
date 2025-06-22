@@ -40,8 +40,8 @@ public:
      */
     typedef touchgfx::meta::TypeList< Screen1View,
             touchgfx::meta::TypeList< Screen2View,
-            touchgfx::meta::Nil
-            > > GeneratedViewTypes;
+            touchgfx::meta::Nil >
+            > GeneratedViewTypes;
 
     /**
      * Determine (compile time) the View type of largest size.
@@ -54,8 +54,8 @@ public:
      */
     typedef touchgfx::meta::TypeList< Screen1Presenter,
             touchgfx::meta::TypeList< Screen2Presenter,
-            touchgfx::meta::Nil
-            > > GeneratedPresenterTypes;
+            touchgfx::meta::Nil >
+            > GeneratedPresenterTypes;
 
     /**
      * Determine (compile time) the Presenter type of largest size.

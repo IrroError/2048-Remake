@@ -1,0 +1,19 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:315:18:virtual void touchgfx::Drawable::setX(int16_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:327:18:virtual void touchgfx::Drawable::setY(int16_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:356:18:virtual void touchgfx::Drawable::setWidth(int16_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:368:18:virtual void touchgfx::Drawable::setHeight(int16_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:378:18:virtual void touchgfx::Drawable::childGeometryChanged()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:389:18:virtual void touchgfx::Drawable::handleClickEvent(const touchgfx::ClickEvent&)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:401:18:virtual void touchgfx::Drawable::handleGestureEvent(const touchgfx::GestureEvent&)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:490:18:virtual void touchgfx::Drawable::handleDragEvent(const touchgfx::DragEvent&)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:501:18:virtual void touchgfx::Drawable::handleTickEvent()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:165:23:virtual touchgfx::Drawable* touchgfx::Container::getFirstChild()	1
+../../TouchGFX/gui/include/gui/containers/EndGameFrame.hpp:10:13:EndGameFrame::~EndGameFrame()	1
+../../TouchGFX/gui/include/gui/containers/EndGameFrame.hpp:10:13:virtual EndGameFrame::~EndGameFrame()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/EndGameFrame.cpp:3:1:EndGameFrame::EndGameFrame()	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/EndGameFrame.cpp:13:6:void EndGameFrame::setCurrentScore(touchgfx::Unicode::UnicodeChar*)	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/EndGameFrame.cpp:19:6:void EndGameFrame::setHighestScore(touchgfx::Unicode::UnicodeChar*)	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/EndGameFrame.cpp:25:6:void EndGameFrame::setTitleMessage(touchgfx::Unicode::UnicodeChar*)	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/containers/EndGameFrame.cpp:8:6:virtual void EndGameFrame::initialize()	1

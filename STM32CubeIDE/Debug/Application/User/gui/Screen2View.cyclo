@@ -1,0 +1,13 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:41:6:virtual void Screen2View::tearDownScreen()	1
+../../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp:11:13:Screen2View::~Screen2View()	1
+../../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp:11:13:virtual Screen2View::~Screen2View()	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:14:1:Screen2View::Screen2View()	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:46:6:void Screen2View::setFinalScore(int)	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:60:6:void Screen2View::setHighestScore(int)	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:74:6:void Screen2View::setGameResult(bool)	2
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:106:6:void Screen2View::handlePlayAgainButtonClicked()	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:135:6:virtual void Screen2View::tickEvent()	3
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:19:6:virtual void Screen2View::setupScreen()	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:128:6:virtual void Screen2View::handleTickEvent()	1

@@ -5,4 +5,6 @@
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:14:13:virtual FrontendApplication::~FrontendApplication()	1
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:16:18:virtual void FrontendApplication::handleTickEvent()	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:59:18:virtual void touchgfx::MVPApplication::handlePendingScreenTransition()	3
-C:/TouchGFXProjects/2048_Game/TouchGFX/gui/src/common/FrontendApplication.cpp:3:1:FrontendApplication::FrontendApplication(Model&, FrontendHeap&)	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/common/FrontendApplication.cpp:6:1:FrontendApplication::FrontendApplication(Model&, FrontendHeap&)	1
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/common/FrontendApplication.cpp:21:6:void FrontendApplication::updateHighestScore(int)	2
+D:/Hust/2024_2/Embeded/2048-Remake/TouchGFX/gui/src/common/FrontendApplication.cpp:12:6:void FrontendApplication::setEndGameData(int, bool)	1

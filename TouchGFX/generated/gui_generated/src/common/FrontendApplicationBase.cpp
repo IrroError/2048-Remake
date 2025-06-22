@@ -46,7 +46,7 @@ void FrontendApplicationBase::gotoScreen1ScreenNoTransitionImpl()
     touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// Screen2 (EndGame)
+// Screen2
 
 void FrontendApplicationBase::gotoScreen2ScreenNoTransition()
 {

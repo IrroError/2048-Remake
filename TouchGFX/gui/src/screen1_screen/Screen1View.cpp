@@ -44,7 +44,9 @@ void Screen1View::setupScreen() {
 			#endif
 		}
 	}
-	mainFrame1.setScore(0);
+	
+	// Use actual board score instead of hardcoded 0
+	mainFrame1.setScore(board1.getScore());
 
 	mainFrame1.setResetCallback(resetGameCallback);
 }
