@@ -18,7 +18,15 @@ public:
         model.tick();
         FrontendApplicationBase::handleTickEvent();
     }
+    
+    // Endgame data methods
+    void setEndGameData(int finalScore, bool gameWon);
+    int getEndGameScore() const { return endGameScore; }
+    bool getEndGameWon() const { return endGameWon; }
+    
 private:
+    int endGameScore;
+    bool endGameWon;
 };
 
 #endif // FRONTENDAPPLICATION_HPP

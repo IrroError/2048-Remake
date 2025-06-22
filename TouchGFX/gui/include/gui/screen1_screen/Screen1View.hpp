@@ -20,7 +20,11 @@ public:
     void tickEvent() override;
     static Screen1View* instance;
     Screen1View* getInstance();
+    
 protected:
+    void checkEndGame();
+    void showEndGameMessage(bool won);
+    
 private:
 };
 #endif // SCREEN1VIEW_HPP

@@ -14,6 +14,8 @@
 
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
+#include <gui/screen2_screen/Screen2View.hpp>
+#include <gui/screen2_screen/Screen2Presenter.hpp>
 
 
 /**
@@ -37,8 +39,9 @@ public:
      * @note All view types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< Screen1View,
+            touchgfx::meta::TypeList< Screen2View,
             touchgfx::meta::Nil
-            > GeneratedViewTypes;
+            > > GeneratedViewTypes;
 
     /**
      * Determine (compile time) the View type of largest size.
@@ -50,8 +53,9 @@ public:
      * @note All presenter types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< Screen1Presenter,
+            touchgfx::meta::TypeList< Screen2Presenter,
             touchgfx::meta::Nil
-            > GeneratedPresenterTypes;
+            > > GeneratedPresenterTypes;
 
     /**
      * Determine (compile time) the Presenter type of largest size.

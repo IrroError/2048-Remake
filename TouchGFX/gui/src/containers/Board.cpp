@@ -2,11 +2,13 @@
 
 int Board::board[4][4] = { 0 };
 touchgfx::Unicode::UnicodeChar Board::textBuffers[16][10];
+bool Board::gameWon = false;
 
 Board::Board() {
 	// Initialize with tiles that can actually move
 	Board::board[1][1] = 2;  // Middle position - can move in all directions
 	Board::board[2][2] = 2;  // Another middle position
+	Board::gameWon = false;
 }
 
 void Board::initialize() {
@@ -99,6 +101,11 @@ bool Board::moveLeft() {
 				Board::board[row][col] *= 2;
 				Board::board[row][col + 1] = 0;
 				moved = true;
+				
+				// Check if we reached 2048
+				if (Board::board[row][col] == 2048) {
+					gameWon = true;
+				}
 			}
 		}
 
@@ -127,6 +134,11 @@ bool Board::moveRight() {
 				Board::board[row][col] *= 2;
 				Board::board[row][col - 1] = 0;
 				moved = true;
+				
+				// Check if we reached 2048
+				if (Board::board[row][col] == 2048) {
+					gameWon = true;
+				}
 			}
 		}
 
@@ -155,6 +167,11 @@ bool Board::moveUp() {
 				Board::board[row][col] *= 2;
 				Board::board[row + 1][col] = 0;
 				moved = true;
+				
+				// Check if we reached 2048
+				if (Board::board[row][col] == 2048) {
+					gameWon = true;
+				}
 			}
 		}
 
@@ -183,6 +200,11 @@ bool Board::moveDown() {
 				Board::board[row][col] *= 2;
 				Board::board[row - 1][col] = 0;
 				moved = true;
+				
+				// Check if we reached 2048
+				if (Board::board[row][col] == 2048) {
+					gameWon = true;
+				}
 			}
 		}
 
@@ -202,7 +224,7 @@ bool Board::moveDown() {
 	return moved;
 }
 
-bool Board::canMove() {
+bool Board::canMove() const {
 	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 4; j++) {
 			if (Board::board[i][j] == 0)
@@ -224,6 +246,45 @@ int Board::getScore() {
 		}
 	}
 	return score;
+}
+
+// Endgame detection methods
+bool Board::hasWon() const {
+	if (gameWon) return true;
+	
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (Board::board[i][j] == 2048) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+bool Board::hasLost() const {
+	// Game is lost if board is full and no moves are possible
+	return !canMove();
+}
+
+bool Board::isGameOver() const {
+	return hasWon() || hasLost();
+}
+
+void Board::resetBoard() {
+	// Clear the board
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			Board::board[i][j] = 0;
+		}
+	}
+	
+	// Reset game won flag
+	gameWon = false;
+	
+	// Add initial tiles
+	Board::board[1][1] = 2;
+	Board::board[2][2] = 2;
 }
 
 touchgfx::Container* Board::getContainer(int row, int col) {

@@ -17,13 +17,21 @@ public:
 	bool moveRight();
 	bool moveUp();
 	bool moveDown();
-	bool canMove();
+	bool canMove() const;
+	
+	// Endgame detection methods
+	bool hasWon() const;
+	bool hasLost() const;
+	bool isGameOver() const;
+	void resetBoard();
+	
 protected:
 	touchgfx::Container* getContainer(int row, int col);
 	touchgfx::TextAreaWithOneWildcard* getTextArea(int row, int col);
 private:
 	static int board[4][4];
 	static touchgfx::Unicode::UnicodeChar textBuffers[16][10];
+	static bool gameWon;
 };
 
 #endif // BOARD_HPP

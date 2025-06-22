@@ -3,6 +3,7 @@
 #include "gui/common/Direction.hpp"
 #include "main.h"  // For HAL_GetTick and UART functions
 #include <cstdio>  // For snprintf
+#include <stdint.h> // For uint32_t
 #include <touchgfx/hal/HAL.hpp>  // For flushFrameBuffer
 
 Screen1View *Screen1View::instance = nullptr;
@@ -96,9 +97,7 @@ void Screen1View::handleJoystickUp() {
 		#endif
 	}
 
-	if (!board1.canMove()) {
-		// Game over logic can be added here
-	}
+	checkEndGame();
 }
 
 void Screen1View::handleJoystickDown() {
@@ -145,9 +144,7 @@ void Screen1View::handleJoystickDown() {
 		#endif
 	}
 
-	if (!board1.canMove()) {
-		// Game over logic can be added here
-	}
+	checkEndGame();
 }
 
 void Screen1View::handleJoystickLeft() {
@@ -194,9 +191,7 @@ void Screen1View::handleJoystickLeft() {
 		#endif
 	}
 
-	if (!board1.canMove()) {
-		// Game over logic can be added here
-	}
+	checkEndGame();
 }
 
 void Screen1View::handleJoystickRight() {
@@ -243,20 +238,18 @@ void Screen1View::handleJoystickRight() {
 		#endif
 	}
 
-	if (!board1.canMove()) {
-		// Game over logic can be added here
-	}
+	checkEndGame();
 }
 
 void Screen1View::handleResetGame() {
-	mainFrame1.setScore(2048);
-	board1.initialize();
+	board1.resetBoard();
 	for (int row = 0; row < 4; row++) {
 		for (int col = 0; col < 4; col++) {
 			int value = board1.getValue(row, col);
 			board1.updateDisplay(row, col, value);
 		}
 	}
+	mainFrame1.setScore(board1.getScore());
 }
 
 extern osMessageQueueId_t directionQueueHandle;
@@ -316,4 +309,36 @@ void Screen1View::tickEvent()
             }
         }
     }
+}
+
+void Screen1View::checkEndGame() {
+	if (board1.isGameOver()) {
+		if (board1.hasWon()) {
+			showEndGameMessage(true);  // Won
+		} else {
+			showEndGameMessage(false); // Lost
+		}
+	}
+}
+
+void Screen1View::showEndGameMessage(bool won) {
+	#ifdef HAL_UART_MODULE_ENABLED
+	extern UART_HandleTypeDef huart1;
+	char msg[100];
+	
+	if (won) {
+		int len = snprintf(msg, sizeof(msg), "*** ENDGAME: CONGRATULATIONS! You reached 2048!\r\n");
+		HAL_UART_Transmit(&huart1, (uint8_t*)msg, len, HAL_MAX_DELAY);
+	} else {
+		int len = snprintf(msg, sizeof(msg), "*** ENDGAME: Game Over! No more moves possible.\r\n");
+		HAL_UART_Transmit(&huart1, (uint8_t*)msg, len, HAL_MAX_DELAY);
+	}
+	#endif
+	
+	// Set endgame data before transitioning
+	int finalScore = board1.getScore();
+	application().setEndGameData(finalScore, won);
+	
+	// Transition to endgame screen (Screen2)
+	application().gotoScreen2ScreenNoTransition();
 }
