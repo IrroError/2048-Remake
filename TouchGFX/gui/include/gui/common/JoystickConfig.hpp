@@ -44,13 +44,15 @@
 
 /**
  * @brief Calibration helper macros
+ * Note: Direction mapping corrected for proper wiring (GND to GND, 3.3V to 3.3V):
+ * - Physical joystick movement matches on-screen tile movement direction
  */
 #define JOYSTICK_IS_X_NEUTRAL(x)  ((x) > JOYSTICK_THRESHOLD_LOW_X && (x) < JOYSTICK_THRESHOLD_HIGH_X)
 #define JOYSTICK_IS_Y_NEUTRAL(y)  ((y) > JOYSTICK_THRESHOLD_LOW_Y && (y) < JOYSTICK_THRESHOLD_HIGH_Y)
 
-#define JOYSTICK_IS_LEFT(x)       ((x) < JOYSTICK_THRESHOLD_LOW_X)
-#define JOYSTICK_IS_RIGHT(x)      ((x) > JOYSTICK_THRESHOLD_HIGH_X)
-#define JOYSTICK_IS_UP(y)         ((y) < JOYSTICK_THRESHOLD_LOW_Y)
-#define JOYSTICK_IS_DOWN(y)       ((y) > JOYSTICK_THRESHOLD_HIGH_Y)
+#define JOYSTICK_IS_LEFT(x)       ((x) < JOYSTICK_THRESHOLD_LOW_X)   // Physical LEFT = Low ADC values
+#define JOYSTICK_IS_RIGHT(x)      ((x) > JOYSTICK_THRESHOLD_HIGH_X)  // Physical RIGHT = High ADC values
+#define JOYSTICK_IS_UP(y)         ((y) < JOYSTICK_THRESHOLD_LOW_Y)   // Physical UP = Low ADC values
+#define JOYSTICK_IS_DOWN(y)       ((y) > JOYSTICK_THRESHOLD_HIGH_Y)  // Physical DOWN = High ADC values
 
 #endif /* JOYSTICK_CONFIG_H */ 
